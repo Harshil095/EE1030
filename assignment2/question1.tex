@@ -41,9 +41,8 @@
 \bibliographystyle{IEEEtran}
 \vspace{3cm}
 
-\title{1-1.2-20}
-\author{EE24BTECH11064 - Harshil Rathan 
-}
+\title{1-1.2-17}
+\author{EE24BTECH11064 - Harshil Rathan }
 % \maketitle
 % \newpage
 % \bigskip
@@ -58,7 +57,7 @@
 \numberwithin{figure}{enumi}
 \renewcommand{\thetable}{\theenumi}
 \textbf{Question}:\\
-Three vertices of a prallelogram $ABCD$ are \textbf{A} \brak{3,-1,2},\textbf{B} \brak{1,-2,4} and \textbf{C} \brak{-1,1,2}.Find the coordinates of the fourth vertex.
+Three vertices of a prallelogram $ABCD$ are \myvec{A}=\brak{3,-1,2},\myvec{B}=\brak{1,-2,4} and \myvec{C}=\brak{-1,1,2}.Find the coordinates of the fourth vertex.
 \\
 \textbf{Solution: }
 \begin{table}[h!]    
@@ -66,9 +65,9 @@ Three vertices of a prallelogram $ABCD$ are \textbf{A} \brak{3,-1,2},\textbf{B} 
   \input{tables/table.tex}
 \end{table}
 \begin{align}
-    \vec{M} = \frac{\vec{A}+\vec{C}}{2}\\
-    \vec{P} = \frac{\vec{B}+\vec{D}}{2}\\
-    \vec{M} = \vec{P}
+    \myvec{M} = \frac{\myvec{A}+\myvec{C}}{2}\\
+    \myvec{P} = \frac{\myvec{B}+\myvec{D}}{2}\\
+    \myvec{M} = \myvec{P}
 \end{align}    
 \begin{align}    
 \myvec{M}=\frac{\myvec{3\\-1\\2}+\myvec{-1\\1\\2}}{2}\\\\
@@ -78,8 +77,9 @@ M =\myvec{1\\0\\2}\\
 \myvec{P}=\frac{\myvec{1\\-2\\4}+\myvec{x\\y\\z}}{2}\\\\
 P= \myvec{\frac{1+x}{2}\\ \frac{y-2}{2} \\ \frac{z+4}{2}}\\
 \end{align}
+Since,
 \begin{align}
-\vec{M} = \vec{P} \\
+\myvec{M} = \myvec{P} \\
 \end{align}
 On comparing both sides, 
 \begin{align}
@@ -88,7 +88,7 @@ x=1, y=2, z=0
 \begin{figure}[h!]
    \centering
    \includegraphics[width=0.7\linewidth]{figs/Figure_1.png}
-   \caption{Stem Plot of y\brak{n}}
+   \caption{Plot of Parallelogram ABCD}
    \label{stemplot}
 \end{figure}
 
