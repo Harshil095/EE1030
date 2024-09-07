@@ -36,8 +36,17 @@ for i, txt in enumerate(['A', 'B', 'C', 'D']):
 ax.set_xlabel('X axis')
 ax.set_ylabel('Y axis')
 ax.set_zlabel('Z axis')
-ax.set_title('Parallelogram ABCD')
+ax.set_title('3D Plot of Parallelogram ABCD')
+
+# Set the viewing angle for better visibility
+ax.view_init(elev=20, azim=30)
+
+# Adjust plot limits for better visibility
+ax.set_xlim([min(vertices[:, 0]) - 1, max(vertices[:, 0]) + 1])
+ax.set_ylim([min(vertices[:, 1]) - 1, max(vertices[:, 1]) + 1])
+ax.set_zlim([min(vertices[:, 2]) - 1, max(vertices[:, 2]) + 1])
 
 plt.legend()
+plt.show()
 plt.grid(True)
 plt.savefig("Figure_1.png")
