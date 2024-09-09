@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.21)  6 SEP 2024 22:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.21)  9 SEP 2024 20:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1898,20 +1898,11 @@ LaTeX Font Info:    Trying to load font information for TS1+txr on input line 6
 
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
-) (./tables/table.tex)
-Underfull \hbox (badness 6978) in paragraph at lines 59--67
-\OT1/txr/m/n/10 Three ver-tices of a pral-lel-o-gram $\OML/txmi/m/it/10 ABCD$ \
-OT1/txr/m/n/10 are $[]$=$[]$,$[]$=$[]$ and
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/usr/share/texlive/texmf
--dist/fonts/enc/dvips/base/8r.enc}
+) (./tables/table.tex) [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}{/u
+sr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 ]
-<figs/Figure_1.png, id=51, 462.528pt x 346.896pt>
+<figs/Figure_1.png, id=55, 462.528pt x 346.896pt>
 File: figs/Figure_1.png Graphic file (type png)
 <use figs/Figure_1.png>
 Package pdftex.def Info: figs/Figure_1.png  used on input line 90.
@@ -1937,7 +1928,7 @@ Package rerunfilecheck Info: Checksums for `question1.out':
 Here is how much of TeX's memory you used:
  52965 strings out of 474222
  1254939 string characters out of 5748733
- 1948975 words of memory out of 5000000
+ 1950975 words of memory out of 5000000
  74395 multiletter control sequences out of 15000+600000
  623283 words of font info for 169 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
@@ -1948,7 +1939,7 @@ exmf-dist/fonts/type1/public/txfonts/txex.pfb></usr/share/texlive/texmf-dist/fo
 nts/type1/public/txfonts/txsy.pfb></usr/share/texlive/texmf-dist/fonts/type1/ur
 w/times/utmb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmr8a.
 pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on question1.pdf (2 pages, 96051 bytes).
+Output written on question1.pdf (2 pages, 97184 bytes).
 PDF statistics:
  103 PDF objects out of 1000 (max. 8388607)
  66 compressed objects within 1 object stream
