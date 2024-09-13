@@ -23,17 +23,17 @@ int main() {
 	C[0][0]=-1;
 	C[1][0]=1;
 	C[2][0]=2;
-        D[0][0]=A[0][0]+C[0][0]-B[0][0];
-	D[1][0]=A[1][0]+C[1][0]-B[1][0];
-	D[2][0]=A[2][0]+C[2][0]-B[2][0];
+        D=Matadd(A,C,3,1);
+	D=Matsub(D,B,3,1);
 	FILE *file =fopen("output.dat","w");
 	if (file==NULL)  {
 		printf("Error opening file!\n");
 		return 1;
 	}
-	fprintf(file,"The value of x is %f\n",D[0][0]);
-	fprintf(file,"The value of y is %f\n",D[1][0]);
-	fprintf(file,"The value of z is %f\n",D[2][0]);
+	fprintf(file,"X\n");
+        fprintf(file,"%f\n",D[0][0]);
+	fprintf(file,"%f\n",D[1][0]);
+	fprintf(file,"%f\n",D[2][0]);
 	fclose(file);
 
 	freeMat(A,3);

@@ -1,52 +1,77 @@
 import numpy as np
 import matplotlib.pyplot as plt
-from mpl_toolkits.mplot3d import Axes3D
+from mpl_toolkits.mplot3d.art3d import Poly3DCollection
+
+# Function definitions
+
+def create_mat(m, n):
+    return np.zeros((m, n))
+
+def mat_add(a, b):
+    return np.add(a, b)
+
+def mat_scale(a, k):
+    return np.multiply(a, k)
+
+def mat_sub(a, b):
+    return np.subtract(a, b)
+
+def matmul(a, b):
+    return np.matmul(a, b)
+
+def rot_mat(theta):
+    return np.array([[np.cos(theta), -np.sin(theta)], [np.sin(theta), np.cos(theta)]])
+
+def norm_vec(a):
+    # Assuming a is a 2D vector for rotation
+    return matmul(rot_mat(np.pi / 2), a)
+
+def matsec(a, b, k):
+    temp = mat_add(a, mat_scale(b, k))
+    return mat_scale(temp, 1 / (k + 1))
 
 # Given vertices
 A = np.array([3, -1, 2])
 B = np.array([1, -2, 4])
 C = np.array([-1, 1, 2])
+D = np.array([1, 2, 0])  # Provided directly
 
-# Calculate the fourth vertex D
-# Midpoint of diagonal AC
-mid_AC = (A + C) / 2
+# Define the vertices of the parallelogram
+vertices = np.array([A, B, C, D, A])
 
-# Midpoint of diagonal BD should be equal to mid_AC
-# Let D = [x, y, z]
-# Midpoint of BD = (B + D) / 2 = mid_AC
-# Thus, D = 2 * mid_AC - B
-D = 2 * mid_AC - B
-
-# Print the coordinates of D
-print("Coordinates of the fourth vertex D:", D)
+# Define the edges of the parallelogram
+edges = [
+    [A, B],
+    [B, C],
+    [C, D],
+    [D, A],
+]
 
 # Plotting the parallelogram
 fig = plt.figure()
 ax = fig.add_subplot(111, projection='3d')
 
-# Plotting vertices
-vertices = np.array([A, B, C, D, A])
-ax.plot(vertices[:, 0], vertices[:, 1], vertices[:, 2], 'o-', label='Parallelogram ABCD')
+# Plotting the vertices
+ax.scatter(vertices[:, 0], vertices[:, 1], vertices[:, 2], color='r')
 
-# Annotate the vertices
-for i, txt in enumerate(['A', 'B', 'C', 'D']):
-    ax.text(vertices[i, 0], vertices[i, 1], vertices[i, 2], txt, color='red')
+# Plotting the edges
+for edge in edges:
+    ax.plot([edge[0][0], edge[1][0]], 
+            [edge[0][1], edge[1][1]], 
+            [edge[0][2], edge[1][2]], 'b-')
 
-# Set labels and title
+# Adding labels to the vertices
+for i, vertex in enumerate([A, B, C, D]):
+    ax.text(vertex[0], vertex[1], vertex[2], f'{chr(65+i)}', color='black')
+
+# Set the labels for axes
 ax.set_xlabel('X axis')
 ax.set_ylabel('Y axis')
 ax.set_zlabel('Z axis')
-ax.set_title('3D Plot of Parallelogram ABCD')
 
-# Set the viewing angle for better visibility
-ax.view_init(elev=20, azim=30)
-
-# Adjust plot limits for better visibility
-ax.set_xlim([min(vertices[:, 0]) - 1, max(vertices[:, 0]) + 1])
-ax.set_ylim([min(vertices[:, 1]) - 1, max(vertices[:, 1]) + 1])
-ax.set_zlim([min(vertices[:, 2]) - 1, max(vertices[:, 2]) + 1])
-
-plt.legend()
-plt.show()
-plt.grid(True)
+# Set the title
+ax.set_title('Parallelogram ABCD')
+plt.grid()
 plt.savefig("Figure_1.png")
+plt.show()
+
