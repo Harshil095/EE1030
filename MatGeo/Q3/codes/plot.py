@@ -1,62 +1,72 @@
+#Code by GVV Sharma
+#September 12, 2023
+#Revised July 21, 2024
+#released under GNU GPL
+#Point Vectors
+
+
+import sys                                          #for path to external scripts
+sys.path.insert(0, '/home/harshil-rathan/Desktop/matgeo/codes/CoordGeo')        #path to my scripts
 import numpy as np
+import numpy.linalg as LA
 import matplotlib.pyplot as plt
+import matplotlib.image as mpimg
 
-# Define side lengths
-def calculate_sides():
-    # Simplify the expression for side lengths
-    denominator = np.sqrt(6) + 2 * np.sqrt(2) + 2 * np.sqrt(3)
-    factor = 48 / denominator
+#local imports
+from line.funcs import *
+from triangle.funcs import *
+from conics.funcs import circ_gen
 
-    ab = factor * (np.sqrt(6) + np.sqrt(2)) / 4
-    bc = factor * (np.sqrt(3)) / 2
-    ca = factor * (1 / np.sqrt(2))
-    
-    return ab, bc, ca
 
-# Function to compute the vertices of the triangle
-def compute_vertices(ab, bc, ca):
-    # Place B at the origin
-    B = np.array([0, 0])
-    
-    # Place C at (bc, 0)
-    C = np.array([bc, 0])
-    
-    # Use law of cosines to find the coordinates of A
-    angle_A_rad = np.arccos((ab**2 + ca**2 - bc**2) / (2 * ab * ca))
-    x = (ca**2 - ab**2 - bc**2) / (-2 * bc)
-    y = np.sqrt(ca**2 - x**2)
-    
-    A = np.array([x, y])
-    
-    return A, B, C
+#if using termux
+import subprocess
+import shlex
+#end if
 
-# Function to plot the triangle
-def plot_triangle(vertices):
-    A, B, C = vertices
-    triangle = np.array([A, B, C, A])  # Close the triangle
+I = np.eye((2))
+e1 = I[:,0].reshape(-1, 1)
+#Given points
+A = np.array(([0, 0])).reshape(-1,1) 
+B = np.array(([6, 0])).reshape(-1,1) 
+C = np.array(([2.25,3.308])).reshape(-1,1)
 
-    plt.figure(figsize=(8, 8))
-    plt.plot(triangle[:, 0], triangle[:, 1], 'b-o')
-    plt.fill(triangle[:, 0], triangle[:, 1], 'lightblue', alpha=0.5)
-    plt.text(A[0], A[1], 'A', fontsize=12, ha='right')
-    plt.text(B[0], B[1], 'B', fontsize=12, ha='right')
-    plt.text(C[0], C[1], 'C', fontsize=12, ha='right')
-    
-    plt.xlabel('X')
-    plt.ylabel('Y')
-    plt.axhline(0, color='black',linewidth=0.5)
-    plt.axvline(0, color='black',linewidth=0.5)
-    plt.grid(True, linestyle='--', alpha=0.7)
-    plt.gca().set_aspect('equal', adjustable='box')
-    plt.title('Triangle ABC')
-    plt.show()
 
-# Calculate side lengths
-ab, bc, ca = calculate_sides()
+# Distances
+d1= LA.norm(A-C)
 
-# Compute the vertices of the triangle
-vertices = compute_vertices(ab, bc, ca)
+#Generating all lines
+x_AC = line_gen(A,C)
+x_CB = line_gen(C,B)
+x_AB = line_gen(A,B)
 
-# Plot the triangle
-plot_triangle(vertices)
+#Plotting all lines
+plt.plot(x_AC[0,:],x_AC[1,:],label='$AC$')
+plt.plot(x_CB[0,:],x_CB[1,:],label='$CB$')
+plt.plot(x_AB[0,:],x_AB[1,:],label='$AB$')
 
+#Labeling the coordinates
+tri_coords = np.block([[A,B,C]])
+plt.scatter(tri_coords[0,:], tri_coords[1,:])
+vert_labels = ['A','B','C']
+for i, txt in enumerate(vert_labels):
+    #plt.annotate(txt, # this is the text
+    plt.annotate(f'{txt}\n({tri_coords[0,i]:.3f}, {tri_coords[1,i]:.3f})',
+                 (tri_coords[0,i], tri_coords[1,i]), # this is the point to label
+                 textcoords="offset points", # how to position the text
+                 xytext=(20,5), # distance from text to points (x,y)
+                 ha='center') # horizontal alignment can be left, right or center
+
+# use set_position
+ax = plt.gca()
+ax.spines['top'].set_color('none')
+ax.spines['left'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['bottom'].set_position('zero')
+plt.xlabel('$x$')
+plt.ylabel('$y$')
+plt.legend(loc='best')
+plt.grid() # minor
+plt.axis('equal')
+
+
+plt.show()
