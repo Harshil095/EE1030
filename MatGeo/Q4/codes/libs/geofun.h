@@ -1,3 +1,4 @@
+
 //Function declaration
 void freeMat(double **matrix, int rows);
 
@@ -39,3 +40,7 @@ double **combineMat(double **a,double **b,int m,int n)
     k+=1;
     return l;
 }
+
+
+
+

@@ -57,7 +57,7 @@
 \numberwithin{figure}{enumi}
 \renewcommand{\thetable}{\theenumi}
 \textbf{Question}:\\
-Draw a triangle $ABC$ in which $BC = 6cm$, and $\angle B = 45\degree$, $\angle{C}=60^\circ$.\\
+Draw a triangle $ABC$ in which $BC = 7cm$, and $\angle B = 45\degree$, $\angle{C}=60^\circ$.\\
 \solution \\
 \begin{table}[h!]
     \centering
@@ -70,13 +70,27 @@ Find $\angle{A}$
 \begin{align}    
      \angle{A}=75^\circ
 \end{align}
-Steps for Construction :\\
-1.Draw the line segment $BC$=7cm \\
-2.Construct $\angle B = 45^\circ$ and mark a Point $D$.\\
-3.Draw Ray $BD$.\\
-4.Construct $\angle C = 60^\circ$ and mark a point $O$.\\
-5.Draw Ray $CO$.\\
-6.Mark the point of intersection of $BD$ and $CO$ as $A$.\\
+Using the Sine Rule,
+\begin{align}
+    \frac{a}{\sin{A}}=\frac{b}{\sin{B}}=\frac{c}{\sin{C}}
+    \label{0.3}
+\end{align}
+\begin{align}
+    b=\frac{a \sin B}{\sin A} 
+\end{align}
+\begin{align}
+    b=\frac{14\sqrt{2}}{\sqrt{6}+\sqrt{2}}
+    \label{0.5}
+\end{align}
+\begin{align}
+    c=\frac{a \sin C}{\sin A}
+\end{align}
+\begin{align}
+      c= \frac{14\sqrt3}{\sqrt6+\sqrt2}
+      \label{0.7}
+\end{align}
+Therefore measure of the sides are, \ref{0.5} \ref{0.7} \\
+$AB=7.06cm$ , $BC=7cm$ , $CA=9cm$
 \begin{figure}[h!]
    \centering
    \includegraphics[width=\linewidth]{figs/Figure_1.png}
