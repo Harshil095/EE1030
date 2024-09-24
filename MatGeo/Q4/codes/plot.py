@@ -58,6 +58,12 @@ plt.text(C[0], C[1], 'C', fontsize=12, ha='right')
 # Calculate AC length
 AC = LA.norm(A - C)
 
+plt.legend([
+    f'Side AB = 7.06cm',  # Length AB
+    f'Side BC = 7.00cm',  # Length BC
+    f'Side AC = 9.00cm'   # Length AC
+], loc='upper right')
+
 
 
 # Labels and grid
