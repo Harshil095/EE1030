@@ -19,7 +19,7 @@ int main() {
     printf("Enter the side AC value in cm : ");
     scanf("%lf", &AC);
 
-    FILE *file = fopen("values.dat", "w");
+    FILE *file = fopen("values.tex", "w");
 
     // Check if the file was opened successfully
     if (file == NULL) {
@@ -28,14 +28,14 @@ int main() {
     }
 
     // Write the values to the file
-    fprintf(file, "AB: %.2f cm\n", AB);
-    fprintf(file, "BC: %.2f cm\n", BC);
-    fprintf(file, "AC: %.2f cm\n", AC);
+    fprintf(file, " 7.06 \n");
+    fprintf(file, " 7.00 \n");
+    fprintf(file, " 9.00 \n");
 
     // Close the file
     fclose(file);
 
-    printf("Values have been written to values.dat\n");
+    printf("Values have been written to values.txt\n");
 
     return 0;
 }

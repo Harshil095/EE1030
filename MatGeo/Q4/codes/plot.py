@@ -1,40 +1,33 @@
-#Code by GVV Sharma
-#September 12, 2023
-#Revised July 21, 2024
-#released under GNU GPL
-#Point Vectors
-
-import sys                                          #for path to external scripts
-sys.path.insert(0, '/home/harshil-rathan/Desktop/matgeo/codes/CoordGeo')        #path to my scripts
+import sys                                          # for path to external scripts
+sys.path.insert(0, '/home/harshil-rathan/Desktop/matgeo/codes/CoordGeo')  # path to my scripts
 import numpy as np
 import numpy.linalg as LA
 import matplotlib.pyplot as plt
 
-# Read values from values.dat
-def read_values(filename):
-    with open(filename, 'r') as file:
-        lines = file.readlines()
-        AB = float(lines[0].split(':')[1].strip().replace('cm', ''))
-        BC = float(lines[1].split(':')[1].strip().replace('cm', ''))
-        AC = float(lines[2].split(':')[1].strip().replace('cm', ''))
-    return AB, BC, AC
+# Read values from values.tex using np.loadtxt
+data = np.loadtxt('values.tex')
 
-# Call the function to read values
-AB, BC, AC = read_values('values.dat')
+# Assign side lengths
+AB = data[0]  # Length from A to B
+BC = data[1]  # Length from B to C
+AC = data[2]  # Length from A to C
 
 # Assume point B is at origin (0, 0)
 B = np.array([0, 0])
 
-# Assuming BC is on the x-axis, so C is at (BC, 0)
-C = np.array([7, 0])
+# C is at (BC, 0)
+C = np.array([BC, 0])
 
-# Calculate coordinates of A using trigonometry
-A = np.array([4.4,4.4])
+# Calculate coordinates of A using the law of cosines
+cos_angle = (AB**2 + BC**2 - AC**2) / (2 * AB * BC)
+angle_B = np.arccos(cos_angle)
 
-# Calculate lengths of the sides
-a = LA.norm(B - C)  # Length BC
-b = LA.norm(C - A)  # Length CA
-c = LA.norm(A - B)  # Length AB
+# Calculate A's coordinates
+A_x = AB * np.cos(angle_B)
+A_y = AB * np.sin(angle_B)
+
+# Final coordinates for A
+A = np.array([A_x, A_y])
 
 # Plotting
 plt.figure()
@@ -55,22 +48,18 @@ plt.text(A[0], A[1], 'A', fontsize=12, ha='right')
 plt.text(B[0], B[1], 'B', fontsize=12, ha='right')
 plt.text(C[0], C[1], 'C', fontsize=12, ha='right')
 
-# Calculate AC length
-AC = LA.norm(A - C)
-
-plt.legend([
-    f'Side AB = 7.06cm',  # Length AB
-    f'Side BC = 7.00cm',  # Length BC
-    f'Side AC = 9.00cm'   # Length AC
-], loc='upper right')
-
-
-
 # Labels and grid
 plt.xlabel('$x$')
 plt.ylabel('$y$')
 plt.grid(True)
 plt.axis('equal')
+
+# Display lengths in the legend
+plt.legend([
+    f'Side AB = {AB:.2f} cm',
+    f'Side BC = {BC:.2f} cm',
+    f'Side AC = {AC:.2f} cm'
+], loc='upper right')
 
 plt.show()
 
