@@ -1,0 +1,121 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{9-9.2-10}
+\author{EE24BTECH11064 - Harshil Rathan}
+% \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and floats
+
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\renewcommand{\thetable}{\theenumi}
+\textbf{Question}:\\
+Find the area of the region bounded by the curve $y^2= x$ and the lines $x = 1$ and
+$x = 4$ and the axis in the first quadrant.\\
+\solution \\
+\begin{table}[h!]
+    \centering
+    \input{tables/table.tex}
+\end{table}
+The parameters of the conic are\\
+\begin{table}[h!]
+    \centering
+    \input{tables/table2.tex}
+    \label{Table2}
+\end{table}
+\begin{align}
+    L : x_i=h+\kappa_i m 
+\end{align}
+Where,
+\begin{align}
+    \kappa_i=\frac{1}{m^\top Vm}(-m^\top(Vh+u) \pm \sqrt{[m^\top(Vh+u)]^2-g(h)(m^\top Vm)}
+    \label{0.2}
+\end{align}
+For the line $x-1=0$, the parameters are\\
+\begin{align}    
+    h_2=\myvec{1\\0} , m_2=\myvec{0\\1}
+\end{align}
+Substituting from the above in (\ref{0.2})\\
+\begin{align}
+    \kappa_i= 1,-1
+\end{align}
+yilelding the points of intersection\\
+\begin{align}
+  a_o=\myvec{1\\1},a_1=\myvec{1\\-1}
+\end{align}
+Similarly, for the line $x-4=0$ (\ref{0.2})\\
+\begin{align}
+   h_1=\myvec{4\\0} , m_1=\myvec{0\\1}
+\end{align}
+yielding\\
+\begin{align}
+    \kappa_i= 2,-2
+\end{align}
+from which, the points of intersection are\\
+\begin{align}
+      a_3=\myvec{4\\2},a_2=\myvec{4\\-2}
+\end{align}
+Thus, the area of the parabola in between the lines $x=1$ and $x=4$ is given by \\
+\begin{align}
+    \int_{0}^{4} \sqrt{x} \, dx - \int_{0}^{1} \sqrt{x} \, dx = \frac{14}{3}
+\end{align}
+Area enclosed is $\frac{14}{3}$.
+\begin{figure}[h!]
+   \centering
+   \includegraphics[width=\linewidth]{figs/Figure_1.png}
+   \caption{}
+   \label{stemplot}
+\end{figure}
+
+
+
+
+
+\end{document}
