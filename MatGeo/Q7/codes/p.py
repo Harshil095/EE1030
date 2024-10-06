@@ -1,66 +1,78 @@
+# Program to plot and shade the region between a circle and a line y = sqrt(3) * x
+# Code by GVV Sharma
+# Released under GNU GPL
+# August 21, 2024
+
 import numpy as np
 import matplotlib.pyplot as plt
+from numpy import linalg as LA
 
- 
+import sys  # for path to external scripts
+sys.path.insert(0, '/home/harshil-rathan/Desktop/matgeo/codes/CoordGeo')  # path to your scripts
 
-# Create theta values for the full circle
-theta = np.linspace(0, 2 * np.pi, 100)
+# Local imports
+from line.funcs import *
+from triangle.funcs import *
+from conics.funcs import *
 
-# Parametric equations for the circle
-x_values_circle = 2 * np.cos(theta)
-y_values_circle = 2 * np.sin(theta)
+# Setting up the plot
+fig = plt.figure()
+ax = fig.add_subplot(111, aspect='equal')
+num = 100
 
-# Create the line inclined at 30 degrees (pi/6) passing through the origin
-# y = (tan(30 degrees)) * x = (1/sqrt(3)) * x
-x_line_inclined = np.linspace(0, 2, 100)  # x values from 0 to 'a'
-y_line_inclined = (1 / np.sqrt(3)) * x_line_inclined  # y = (1/sqrt(3)) * x
+# Circle parameters
+u = np.array(([0, 0])).reshape(-1, 1)  # Center of the circle
+f = -4                                 # Circle equation: x^2 + y^2 = 4
+O, r = circ_param(u, f)                 # Extract center and radius
+x_circ = circ_gen_num(O, r, num)        # Generate circle points
 
-# Determine the intersection point of the line and the circle in the first quadrant
-# Equation of the circle: x^2 + y^2 = a^2
-# Equation of the line: y = (1/sqrt(3)) * x
-# Substitute y = (1/sqrt(3)) * x into the circle equation:
-# x^2 + (1/sqrt(3))^2 * x^2 = a^2
-# x^2 (1 + 1/3) = a^2
-# x^2 * 4/3 = a^2
-# x^2 = 3a^2 / 4
-# x = a * sqrt(3) / 2
-x_intersection = 2 * np.sqrt(3) / 2
-y_intersection = (1 / np.sqrt(3)) * x_intersection
+# Generate points for the line y = sqrt(3) * x
+x_line = np.linspace(0, 2, num)         # x values for the line from 0 to 2 (first quadrant)
+y_line = np.sqrt(3) * x_line            # y values calculated as y = sqrt(3) * x
 
-# Create x values for shading from 0 to the intersection point
-x_shade = np.linspace(0, x_intersection, 100)
-y_shade_line = (1 / np.sqrt(3)) * x_shade  # y values for the line
-y_shade_circle = np.sqrt(2**2 - x_shade**2)  # y values for the circle
+# Intersection point between line and circle in the first quadrant
+x_intersection = 1
+y_intersection = np.sqrt(3)
 
-# Create the plot
-plt.figure(figsize=(10, 10))
+# Define the region for shading: x values from 0 to intersection point
+x_shade = np.linspace(0, x_intersection, num)
+y_shade_line = np.sqrt(3) * x_shade       # y values for the line y = sqrt(3) * x
+y_shade_circle = np.sqrt(4 - x_shade**2)  # y values for the circle y = sqrt(4 - x^2)
 
 # Plot the circle
-plt.plot(x_values_circle, y_values_circle, label='$x^2 + y^2 = a^2$', color='blue')
+plt.plot(x_circ[0, :], x_circ[1, :], label='Circle: $x^2 + y^2 = 4$', color='blue')
 
-# Plot the inclined line y = (1/sqrt(3)) * x
-plt.plot(x_line_inclined, y_line_inclined, label='$y = \\frac{1}{\\sqrt{3}}x$', color='green', linestyle='--')
+# Plot the line y = sqrt(3) * x
+plt.plot(x_line, y_line, label='$y = \\sqrt{3}x$', linestyle='--', color='green')
 
-# Shade the region enclosed between the line, circle, and positive x-axis
-plt.fill_between(x_shade, y_shade_line, y_shade_circle, color='lightgreen', alpha=0.5, label='Enclosed Shaded Region')
+# Shade the region between the line, circle, and x-axis in the first quadrant
+plt.fill_between(x_shade, y_shade_line, y_shade_circle, color='lightgreen', alpha=0.5, label='Shaded Region')
 
-# Add x-axis and y-axis
-plt.axhline(0, color='black', linewidth=1.2)  # X-axis
-plt.axvline(0, color='black', linewidth=1.2)  # Y-axis
+# Circle center and point labels
+plt.scatter(u[0], u[1], color='red')
+plt.text(u[0] + 0.1, u[1] + 0.1, 'Center (0, 0)', fontsize=12, color='red')
 
-# Set the limits of the plot
-plt.xlim(-2 - 1, 2 + 1)
-plt.ylim(-2 - 1, 2 + 1)
+# Mark the intersection point
+plt.scatter(x_intersection, y_intersection, color='purple')
+plt.text(x_intersection + 0.1, y_intersection + 0.1, f'({x_intersection}, {y_intersection:.2f})', fontsize=12, color='purple')
 
-# Add labels and title
-plt.title('Region Enclosed between Circle, Line, and Positive X-axis')
-plt.xlabel('X-axis (x)')
-plt.ylabel('Y-axis (y)')
+# Setting up the plot limits
+plt.xlim(-0.5, 2.5)
+plt.ylim(-0.5, 2.5)
+
+# Customizing the axes and labels
+ax.spines['top'].set_color('none')
+ax.spines['left'].set_position('zero')
+ax.spines['right'].set_color('none')
+ax.spines['bottom'].set_position('zero')
+
+# Add labels and legend
+plt.xlabel('$x$')
+plt.ylabel('$y$')
+plt.title('Region Enclosed by Circle, Line $y = \\sqrt{3}x$, and X-axis')
+plt.legend(loc='best')
 plt.grid()
-plt.axis('equal')  # Set equal scaling for x and y axes
-
-# Move the legend to the top-left corner
-plt.legend(loc='upper left')
+plt.axis('equal')
 
 # Show the plot
 plt.show()
