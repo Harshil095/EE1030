@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.21)  8 OCT 2024 00:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2024.8.21)  8 OCT 2024 01:09
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1208,13 +1208,13 @@ LaTeX Font Info:    Trying to load font information for OT1+txr on input line 5
 1.
  (/usr/share/texlive/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
-)
-No file mcq.aux.
+) (./mcq.aux)
 \openout1 = `mcq.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 51.
 LaTeX Font Info:    Trying to load font information for OML+txmi on input line 
 51.
+
 (/usr/share/texlive/texmf-dist/tex/latex/txfonts/omltxmi.fd
 File: omltxmi.fd 2000/12/15 v3.1
 )
@@ -1326,6 +1326,8 @@ LaTeX Info: Redefining \ohm on input line 51.
 Package gensymb Info: Using \textohm for \ohm on input line 51.
 Package gensymb Info: Using \textmu for \micro on input line 51.
 Package hyperref Info: Link coloring OFF on input line 51.
+
+(./mcq.out) (./mcq.out)
 \@outlinefile=\write5
 \openout5 = `mcq.out'.
 
@@ -1367,21 +1369,14 @@ f-dist/fonts/enc/dvips/base/8r.enc}
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2020/03/25>
  ***********
-
-
-Package rerunfilecheck Warning: File `mcq.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `mcq.out':
-(rerunfilecheck)             Before: <no file>
-(rerunfilecheck)             After:  D41D8CD98F00B204E9800998ECF8427E;0.
+Package rerunfilecheck Info: File `mcq.out' has not changed.
+(rerunfilecheck)             Checksum: D41D8CD98F00B204E9800998ECF8427E;0.
  ) 
 Here is how much of TeX's memory you used:
- 30446 strings out of 474222
- 595589 string characters out of 5748733
+ 30454 strings out of 474222
+ 595677 string characters out of 5748733
  1947975 words of memory out of 5000000
- 52025 multiletter control sequences out of 15000+600000
+ 52027 multiletter control sequences out of 15000+600000
  615284 words of font info for 149 fonts, out of 8000000 for 9000
  1144 hyphenation exceptions out of 8191
  101i,8n,103p,1171b,441s stack positions out of 10000i,1000n,20000p,200000b,200000s
