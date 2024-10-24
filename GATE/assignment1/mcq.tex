@@ -1,0 +1,341 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{circuitikz}
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=4em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{sum} = [draw, fill=blue!10, circle, minimum size=1cm, node distance=1.5cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+
+
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{EE - 2007}
+\author{EE24BTECH11064 - Harshil Rathan}
+ \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and floats
+
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\renewcommand{\thetable}{\theenumi}
+\begin{enumerate}
+\item The system $\frac{900}{s(s + 1)(s + 9)}$ is to be compensated such that its gain-crossover frequency becomes the same as its uncompensated phase-crossover frequency and provides a $45^\circ$ phase margin. To achieve this, one may use:
+\begin{enumerate}
+    \item a lag compensator that provides an attenuation of $20dB$ and a phase lag of $45^\circ$ at the frequency of $3\sqrt{3}$ rad/s
+    \item  a lag compensator that provides an amplification of $20dB$ and a phase lead of $45^\circ$ at the frequency of $3$ rad/s
+    \item  a lag-lead compensator that provides an amplification of $20dB$ and a phase lag of $45^\circ$ at the frequency of $\sqrt{3}$ rad/s
+    \item  a lag-lead compensator that provides an attenuation of $20dB$ and a phase lead of $45^\circ$ at the frequency of $3$ rad/s
+\end{enumerate}
+\item Consider the discrete-time system shown in figure where the impulse response of $G\brak{z}$ is $g\brak{0}=0$, $g\brak{1}=g\brak{2}=1$,  $g\brak{3}=g\brak{4}=\cdots=0$
+    
+\begin{tikzpicture}[auto, node distance=2cm,>=latex']
+
+    % Nodes
+    \node [input] (input) {};
+    \node [sum, right of=input] (sum) {$\Sigma$};
+    \node [block, right of=sum, node distance=3cm] (G) {$G(z)$};
+    \node [output, right of=G, node distance=2cm] (output) {};
+    \node [block, below of=sum, node distance=2cm] (K) {$K$};
+
+    % Connections
+    \draw [->] (input) -- node {$+$} (sum);
+    \draw [->] (sum) -- node {} (G);
+    \draw [->] (G) -- node [name=y] {} (output);
+    \draw [->] (y) |-(K);
+    \draw [->] (K.east) -| node[pos=0.5] {$+$} (sum);
+
+\end{tikzpicture}
+
+This system is stable for range of values of $K$
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $[-1,\frac{1}{2}]$
+    \item $[-1,1]$
+    \item $[\frac{-1}{2},1]$
+    \item $[\frac{-1}{2},2]$
+\end{enumerate}
+\end{multicols}
+\item A signal \(x(t)\) is given by
+\[
+x(t) =
+\begin{cases}
+1, & -\frac{T}{4} < t \leq \frac{3T}{4} \\
+-1, & \frac{3T}{4} < t \leq \frac{7T}{4} \\
+-x(t + T) & \text{(periodic extension)}
+\end{cases}
+\]
+
+Which among the following gives the fundamental Fourier term of $x\brak{t}$?
+\begin{multicols}{2}
+\begin{enumerate}
+       \item $\frac{4}{\pi}\cos({\frac{\pi t}{T}-\frac{\pi}{4}})$
+       \item $\frac{\pi}{4}\cos({\frac{\pi t}{2T}-\frac{\pi}{4}})$
+       \item $\frac{4}{\pi}\sin({\frac{\pi t}{T}-\frac{\pi}{4}})$
+       \item $\frac{\pi}{4}\sin({\frac{\pi t}{2T}-\frac{\pi}{4}})$
+\end{enumerate}
+\end{multicols}
+\item If the loop gain K of a negative feedback system having a loop transfer function $\frac{K\brak{s+3}}{\brak{s+8}^2}$ is to be adjusted to induce a sustained oscillation then 
+\begin{enumerate}
+    \item The frequency of this oscillation must be $\frac{4}{\sqrt{3}}$ rad/s
+    \item The frequency of this oscillation must be $4$ rad/s
+    \item The frequency of this oscillation must be $4$ or $\frac{4}{\sqrt{3}}$ rad/s
+    \item such a K does not exist
+\end{enumerate}
+\item The system shown in figure below.
+\begin{figure}[!ht]
+\centering
+\resizebox{1\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\LARGE]
+\draw [short] (3.75,15.5) -- (14.75,15.5);
+\draw [->, >=Stealth] (14.75,15.5) -- (14.75,14.5);
+\draw [short] (15.25,14.5) -- (15.25,13.75);
+\draw [short] (14.25,14.5) -- (14.25,13.75);
+\draw [short] (14.75,13.75) -- (14.75,13);
+\draw [->, >=Stealth] (14.75,13) -- (13.75,13);
+\draw  (13.25,13) circle (0.5cm) node {\LARGE $\sum$} ;
+\draw [->, >=Stealth] (13.25,12.5) -- (13.25,11);
+\draw  (13.25,10.5) circle (0.5cm) node {\LARGE $\sum$} ;
+\draw  (14.25,14.5) rectangle  node {\LARGE $C_1$} (15.25,13.75);
+\draw [->, >=Stealth] (13.75,10.5) -- (14.75,10.5);
+\draw [->, >=Stealth] (13.25,9.5) -- (13.25,10);
+\draw [->, >=Stealth] (11,10.5) -- (12.75,10.5);
+\draw  (12.75,9.5) rectangle  node {\LARGE $a_1$} (13.75,8.75);
+\draw  (9.5,11) rectangle  node {\LARGE 1/s} (11,10.25);
+\draw  (14.75,11) rectangle  node {\LARGE 1/s} (16,10.25);
+\draw [->, >=Stealth] (16,10.75) -- (17,10.75);
+\draw  (17,11.25) rectangle  node {\LARGE P} (18.25,10.25);
+\draw [->, >=Stealth] (18.25,10.75) -- (19.25,10.75);
+\draw [->, >=Stealth] (8,15.5) -- (8,14.5);
+\draw [->, >=Stealth] (8,10.5) -- (9.5,10.5);
+\draw [->, >=Stealth] (13.25,8) -- (13.25,8.75);
+\draw [short] (13.25,8) -- (16.5,8);
+\draw [short] (16.5,8) -- (16.5,10.75);
+\draw [short] (18.75,10.75) -- (18.75,7.5);
+\draw [short] (6.5,15) -- (10.25,15);
+\draw [short] (3,15) -- (6.75,15);
+\draw [short] (3,15) -- (3,6.75);
+\draw [short] (3,6.75) -- (18.75,6.75);
+\draw [short] (18.75,6.75) -- (18.75,7.75);
+\draw [->, >=Stealth] (4.25,15) -- (4.25,14.5);
+\draw [->, >=Stealth] (10.25,15) -- (10.25,14.5);
+\draw  (3.75,14.5) rectangle  node {\LARGE $b_0$} (5,13.75);
+\draw  (7.25,14.5) rectangle  node {\LARGE $c_0$} (8.75,13.75);
+\draw  (9.75,14.5) rectangle (10.75,13.75);
+\draw [short] (4.25,13.75) -- (4.25,10.25);
+\draw [short] (4.25,10.25) -- (5.5,10.25);
+\draw  (6,10.25) circle (0.5cm) node {\LARGE $\sum$} ;
+\draw [short] (6.5,10.25) -- (8,10.25);
+\draw [short] (8,10.25) -- (8,10.5);
+\draw [short] (8,13.75) -- (8,12.25);
+\draw [short] (8,12.25) -- (6,12.25);
+\draw [->, >=Stealth] (6,12.25) -- (6,10.75);
+\draw [->, >=Stealth] (6,8.75) -- (6,9.75);
+\draw  (5.5,8.75) rectangle  node {\LARGE $a_0$} (6.5,7.75);
+\draw [short] (6.5,8.25) -- (13.25,8.25);
+\end{circuitikz}
+}%
+\end{figure}
+Can be reduced to the form\\
+\begin{figure}[!ht]
+\centering
+\resizebox{1\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\LARGE]
+\draw [->, >=Stealth] (3.5,12.75) -- (5,12.75);
+\draw  (5,13.25) rectangle  node {\LARGE X} (7,12.25);
+\draw [->, >=Stealth] (7,12.75) -- (8.25,12.75);
+\draw  (9,12.75) circle (0.75cm) node {\LARGE $\sum$} ;
+\draw [->, >=Stealth] (9.75,12.75) -- (11,12.75);
+\draw [->, >=Stealth] (9,10) -- (9,12);
+\draw  (11,13.25) rectangle  node {\LARGE Y} (12.75,12.25);
+\draw [->, >=Stealth] (12.75,12.75) -- (14.5,12.75);
+\draw  (14.5,13.25) rectangle  node {\LARGE P} (16.5,12.25);
+\draw [->, >=Stealth] (16.5,12.75) -- (17.5,12.75);
+\draw [short] (9,10) -- (11.25,10);
+\draw [short] (17,12.75) -- (17,10.25);
+\draw [short] (17,10.25) -- (17,10);
+\draw [short] (17,10) -- (14.25,10);
+\draw [->, >=Stealth] (14.25,10) -- (13.25,10);
+\draw  (11.25,10.75) rectangle  node {\LARGE Z} (13.25,9.5);
+\end{circuitikz}
+}%
+
+\end{figure}
+\begin{enumerate}
+    \item $X=c_0s+c_1$, $Y=\frac{1}{s^2+a_0s+a_1}$, $Z=b_0s+b_1$
+    \item $X=1$, $Y=\frac{c_0s+c_1}{s^2+a_0s+a_1}$, $Z=b_0s+b_1$
+    \item $X=c_1s+c_0$, $Y=\frac{b_1s+b_0}{s^2+a_1s+a_0}$, $Z=1$
+    \item $X=c_1s+c_0$, $Y=\frac{1}{s^2+a_1s+a_0}$, $Z=b_1s+b_0$
+\end{enumerate}
+\item The value of $\oint_{C}\frac{dz}{(1+z^{2})}$ where C is contour $|z-\frac{i}{2}|=1$ is 
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $2\pi i$
+    \item $\pi$
+    \item $\tan^-{1}{z}$
+    \item $\pi i \tan^-{1}{z}$ 
+\end{enumerate}
+\end{multicols}
+\item A single-phase voltage source inverter is controlled in a single pulse-width modulated mode with a pulse width of $150^\circ$ in each half cycle. Total harmonic distortion is defined as $THD=\frac{\sqrt{V_{rms}^2-V_1^2}}{V_1}\times 100$, where $V_1$ is the rms value of the fundamental component of the output voltage. The THD of output ac voltage waveform is 
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $65.65\%$
+    \item $48.42\%$
+    \item $31.83\%$
+    \item $30.49\%$
+\end{enumerate}    
+\end{multicols}
+\item A voltage source inverter is used to control the speed of a three-phase, $50Hz$, squirrel cage induction motor. Its slip for rated torque is $4\%$. The flux is maintained at rated value. If the stator resistance and rotational losses are neglected, then the frequency of the impressed voltage to obtain twice the rated troque at starting should be
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $10Hz$
+    \item $5Hz$
+    \item $4Hz$
+    \item $2Hz$
+\end{enumerate}    
+\end{multicols}
+\item A three-phase, $440V$, $50Hz$ ac mains fed thyristor bridge is feeding a $440 V$dc, $15kW$, $1500$rpm separately excited dc motor with a ripple free continuous current in the dc link under all operating conditions. Neglecting the losses, the power factor of the ac mains at half the rated speed, is 
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $0.354$
+    \item $0.372$
+    \item $0.90$
+    \item $0.955$
+\end{enumerate}    
+\end{multicols}
+\item A single-phase, $230V$, $50$Hz ac mains fed step down transformer $\brak{4:1}$ is supplying power to a half-wave uncontrolled ac-dc converter used for charginga battery $\brak{12Vdc}$ with the series current limiting resistor being $19.04\ohm$, The charging current is
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $2.43A$
+    \item $1.65A$
+    \item $1.22A$
+    \item $1.0A$
+\end{enumerate}    
+\end{multicols}
+\item A three-phase synchronous motor connected to ac mains is runnign at full load and unity power factor. If its shift load is reduced by half, with field current held constant, its new power factor will be 
+\begin{enumerate}
+    \item unity
+    \item leading
+    \item lagging
+    \item dependent on machine parameters
+\end{enumerate}    
+\item A $100kVA$, $415V\brak{line}$, star-connected synchronous machine generates rated open circuit voltage of $415V$ at a field current of $15A$. The short circuit armature current at a field current of $10A$ is equal to the rated armature current. The per unit saturated synchronous reactance is 
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $1.731$
+    \item $1.5$
+    \item $0.666$
+    \item $0.577$
+\end{enumerate}    
+\end{multicols}
+\item A three-phase, three-stack, variable reluctance step motor has 20 poles on each rotor ans stator stack. The step angle of this step motor is
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $3^\circ$
+    \item $6^\circ$
+    \item $9^\circ$
+    \item $18^\circ$
+\end{enumerate}    
+\end{multicols}
+\item A single-phase $50$kVA, $250V/500V$ two winding transformer has an efficiency of $95\%$ at full load, unity power factor. If it is reconfigured as $500V/750V$ autotransformer, its efficiency at its new rated load at unity power factor will be 
+\begin{multicols}{2}
+\begin{enumerate}
+  \item $95.752\%$
+    \item $97.851\%$
+    \item $98.276\%$
+    \item $99.241\%$
+\end{enumerate}    
+\end{multicols}
+\item A $230V$(Phase), $50Hz$, three-phase, 4-wire system has a phase sequence ABC. A unity power-factor load of $4kW$ is connected betweem phase A and neutral N. It is desired to achieve zero neutral current through the use fo a pure inductor and a pure capacitor in the other two phases. The value of inductor and capacitor is 
+\begin{enumerate}
+    \item $72.95$mH in phase C and $139.02\micro$F in phase B
+     \item $72.95$mH in phase B and $139.02\micro$F in phase C
+      \item $42.12$mH in phase C and $240.79\micro$F in phase B
+      \item $42.12$mH in phase B and $240.79\micro$F in phase C
+\end{enumerate}
+\item The state equation for the current $I_1$ is shown in the network 
+shown below in terms of the voltage $V_x$ and the independent sources $V$, is given by 
+\begin{figure}[!ht]
+\centering
+\resizebox{1\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw (7,14) to[american voltage source,l={ \normalsize V}] (7,11);
+\draw (7,14) to[R,l={ \normalsize 3 $\Omega$}] (9.25,14);
+\draw (9.25,14) to[L,l={ \normalsize 0.2 H} ] (11,14);
+\draw (11,14) to[short] (10.5,14);
+\draw (11,14) to[L,l={ \normalsize 0.5 H} ] (11,11.25);
+\draw (11,14) to[R,l={ \normalsize 5 $\Omega$}] (13.75,14);
+\draw (13.75,14) to[american controlled voltage source,l={ \normalsize $0.2 V_x$}] (13.75,11.25);
+\draw (7,11) to[short] (13.75,11);
+\draw (11,11.5) to[short] (11,11);
+\draw (13.75,11.5) to[short] (13.75,11);
+\end{circuitikz}
+}%
+\end{figure}
+\begin{enumerate}
+  \item $\frac{dI_i}{dt}=-1.4V_x - 3.75I_i + \frac{5}{4}V$
+    \item $\frac{dI_j}{dt}=1.4V_3 - 3.75I_j - \frac{5}{4}V$
+    \item $\frac{dI_i}{dt}=-1.4V_s + 3.75I_i + \frac{5}{4}V$
+    \item $\frac{dI_j}{dt}=-1.4V_x + 3.75I_t - \frac{5}{4}V$
+\end{enumerate}
+\item If $u\brak{t}$, $r\brak{t}$ denote the unit step and unit ramp functions respectively and $u\brak{t}*r\brak{t}$ their convolution, then the function $u\brak{t+1}*r\brak{t-2}$ is given by 
+\begin{multicols}{2}
+\begin{enumerate}
+  \item $\brak{\frac{1}{2}}\brak{t-1}\brak{t-2}$
+    \item $\brak{\frac{1}{2}}\brak{t-1}\brak{t-2}$
+    \item $\brak{\frac{1}{2}}\brak{t-1}^2 u\brak{t-1}$
+    \item none of the above
+\end{enumerate}    
+\end{multicols}
+\end{enumerate}
+\end{document}
+
+
