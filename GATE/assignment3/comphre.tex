@@ -1,0 +1,207 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{circuitikz}
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=4em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{sum} = [draw, fill=blue!10, circle, minimum size=1cm, node distance=1.5cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+
+
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{CE - 2010}
+\author{EE24BTECH11064 - Harshil Rathan}
+ \maketitle
+% \newpage
+% \bigskip
+{\let\newpage\relax\maketitle}
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and floats
+
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\renewcommand{\thetable}{\theenumi}
+\textbf{Statement for Linked Answer Questions 52 and 53:} \\
+A doubly reinforced rectangular concrete beam has a width of 300 mm and an effective depth of 500 mm. The beam is reinforced with 2200 mm\(^2\) of steel in tension and 628 mm\(^2\) of steel in compression. The effective cover for compression steel is 50 mm. Assume that both tension and compression steel yield. The grades of concrete and steel used are M20 and Fe250, respectively. The stress block parameters (rounded off to first two decimal places) for concrete shall be as per IS 456:2000.
+\bigskip
+\begin{enumerate}
+\item[53)] The moment of resistance of the section is
+\begin{enumerate}
+    \item 206.00 kN-m
+    \item 209.20 kN-m
+    \item 236.80 kN-m
+    \item 251.90 kN-m
+\end{enumerate}
+\bigskip
+\textbf{Statement for Linked Answer Questions 54 and 55:} \\
+The unconfined compressive strength of a saturated clay sample is 54 kPa.
+\bigskip
+\item[54)] The value of cohesion for the clay is
+\begin{multicols}{2}
+\begin{enumerate}
+    \item zero
+    \item $13.5 kPa$
+    \item $27 kPa$
+    \item $54 kPa$
+\end{enumerate}
+\end{multicols}
+\item[55)] If a square footing of size $4m\times 4m$ is resting on the surface of a deposit of the above clay, the ultimate bearing capacity of the footing$\brak{\text{As per Terzagi's Equation}}$ is
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $1600 kPa$
+    \item $316kPa$
+    \item $200kPa$
+    \item $100 kPa$
+\end{enumerate}
+\end{multicols}
+\bigskip
+\textbf{Q.56-Q.60 carry one mark each.}
+\bigskip
+\item[56)] Which of the following options is the closest in meaning to the word below:  
+\textbf{Circuitous}
+\begin{enumerate}
+    \item cyclic
+    \item indirect
+    \item confusing
+    \item crooked
+\end{enumerate}
+\item[57)] The question below consists of a pair of related words followed by four pairs of words. Select the pair that best expresses the relation in the original pair.  
+\textbf{Unemployed : Worker}
+\begin{enumerate}
+    \item fallow : land
+    \item unaware : sleeper
+    \item wit : jester
+    \item renovated : house
+\end{enumerate}
+\item[58)] Choose the most appropriate word from the options given below to complete the following sentence:  
+If we manage to $\_\_\_\_\_\_\_\_$ our natural resources, we would leave a better planet for our children.
+\begin{multicols}{2}
+\begin{enumerate}
+    \item uphold
+    \item restrain
+    \item cherish
+    \item conserve
+\end{enumerate}
+\end{multicols}
+\item[59)] Choose the most appropriate word from the options given below to complete the following sentence:  
+His rather casual remarks on politics \_\_\_\_\_\_\_\_ his lack of seriousness about the subject.
+\begin{multicols}{2}
+\begin{enumerate}
+   \item masked
+    \item belied
+    \item betrayed
+    \item suppressed
+\end{enumerate}    
+\end{multicols}
+\item[60)] 25 persons are in a room. 15 of them play hockey, 17 of them play football, and 10 of them play both hockey and football. Then the number of persons playing neither hockey nor football is:
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $2$
+    \item $17$
+    \item $13$
+    \item $3$
+\end{enumerate}    
+\end{multicols}
+\bigskip
+\textbf{Q.61-Q.65 carry one mark each.}
+\bigskip
+\item[61)] \textbf{Modern warfare has changed from large scale clashes of armies to suppression of civilian population. Chemical agents that do their work silently appear to be suited to such warfare;and regretfully, there exist people in military establishments who think that chemical agents are useful look for their cause}
+\bigskip \\
+Which of the following statements best sums up the meaning of the above passage:
+\begin{enumerate}
+    \item Modern warfare had resulted in civil strife.
+    \item Chemical agents are useful in modern warfare
+    \item Use of chemical agents in warfare would be undesirable.
+    \item People in military establishments like to use chemical agents in war
+\end{enumerate}    
+\item[62)] If $137+276=435$ how much is $731+672$
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $534$
+    \item $1403$
+    \item $1623$
+    \item $1513$
+\end{enumerate}    
+\end{multicols}  
+\item[63)] 5 skilled workers can build a wall in 20 days, 8 semi-skilled workers can build a wall in 25 days, 10 unskilled workers can build a wall in 30 days. If a team has 2 skilled, 6 semi-skilled and 5 unskilled workers, how long will it take to build the wall?
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $20$ days
+    \item $18$days
+    \item $16$days
+    \item $15$days
+\end{enumerate}    
+\end{multicols}
+\item[64)] Given digits $2,2,3,3,3,4,4,4,4$ how much distinct 4 digit numbers greater than 3000 can be formed?
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $50$
+    \item $51$
+    \item $52$
+    \item $54$
+\end{enumerate}    
+\end{multicols}
+\item[65)] Hari (H), Gita (G), Irfan (I) and Saira (S) are siblings (i.e. brothers and sisters). All were born on 1\textsuperscript{st} January. The age difference between any two successive siblings (that is born one after another) is less than 3 years. Given the following facts:
+
+\begin{itemize}
+    \item[i.] Hari's age \( + \) Gita's age \( > \) Irfan's age \( + \) Saira's age.
+    \item[ii.] The age difference between Gita and Saira is 1 year. However, Gita is not the oldest and Saira is not the youngest.
+    \item[iii.] There are no twins.
+\end{itemize}
+
+In what order were they born (oldest first)?
+
+\begin{itemize}
+    \item[(A)] HSGI
+    \item[(B)] SGHI
+    \item[(C)] IGSH
+    \item[(D)] HESG
+\end{itemize}
+\end{enumerate}
+\end{document}
+
+
+

@@ -1,0 +1,176 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{MA - 2010}
+\author{EE24BTECH11064 - Harshil Rathan}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\section*{Single Correct 2 Marks each}
+\begin{enumerate}
+\item For the linear programming problem
+\begin{align*}
+    \text{Minimize } z = x - y \text{ , subject to } 2x + 3y \leq 6, 0 \leq x \leq 3, 0 \leq y \leq 3,
+\end{align*}
+the number of extreme points of its feasible region and the number of basic feasible solutions respectively, are
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item 3 and 3
+        \item 4 and 4 
+        \item 3 and 5
+        \item 4 and 5
+    \end{enumerate}
+\end{multicols}
+
+\item Which one of the following statements is correct?
+\begin{multicols}
+    \begin{enumerate}
+        \item If a Linear Programming Problem (LPP) is infeasible, then its dual is also infeasible
+        \item If an LPP is infeasible, then its dual always has unbounded solution
+        \item If an LPP has unbounded solution, then its dual also has unbounded solution
+        \item If an LPP has unbounded solution, then its dual is infeasible
+    \end{enumerate}
+\end{multicols}
+
+\item Which one of the following groups is simple?
+\begin{multicols}
+    \begin{enumerate}
+        \item $S_3$
+        \item $GL\brak{2,R}$
+        \item $Z_2 \times Z_2$
+        \item $A_5$
+    \end{enumerate}
+\end{multicols}
+
+\item Consider the algebraic extension $E = Q \brak{\sqrt{2}, \sqrt{3}, \sqrt{5}}$ of the field $\mathbb{Q}$ of rational numbers. Then $\sbrak{E \colon Q}$, the degree of $E$ over $Q$, is
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item 3
+        \item 4
+        \item 7
+        \item 8
+    \end{enumerate}
+\end{multicols}
+
+\item The general solution of the partial differential equation $\frac{\partial^2 z}{\partial x \partial y} = x + y$ is of the form
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\frac{1}{2} xy \brak{x+y} + F\brak{x} + G\brak{y}$
+        \item $\frac{1}{2} xy \brak{x-y} + F\brak{x} + G\brak{y}$
+        \item $\frac{1}{2} xy \brak{x-y} + F\brak{x} G\brak{y}$
+        \item $\frac{1}{2} xy \brak{x+y} + F\brak{x} G\brak{y}$
+    \end{enumerate}
+\end{multicols}
+
+\item The numerical value obtained by applying the two-point trapezoidal rule to the integral $\int_0^1 \frac{\ln{\brak{1+x}}}{x}, dx$ is
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\frac{1}{2} \brak{\ln{2}+1}$
+        \item $\frac{1}{2}$
+        \item $\frac{1}{2} \brak{\ln{2}-1}$
+        \item $\frac{1}{2} \ln{2}$
+    \end{enumerate}
+\end{multicols}
+
+\item Let $l_k \brak{x} =, k =0,1, \dots , n$ denote the Lagrange's fundamental polynomials of degree $n$ for the nodes $x_0, x_1, \dots , x_n$. Then the value of $\sum_{k=0}^{n} l_k \brak{x}$ is
+    \begin{enumerate}
+        \item 0
+        \item 1
+        \item $x^n + 1$
+        \item $x^n - 1$
+    \end{enumerate}
+
+\item Let $X$ and $Y$ be normed linear spaces and $\cbrak{T_n}$ be a sequence of bounded linear operators from $X$ to $Y$. Consider the statements:
+\begin{align*}
+    P \colon \cbrak{\abs{\abs{T_n x}} \colon n \in \mathbb{N}} \text{ is bounded for each } x \in X\\
+    Q \colon \cbrak{\abs{\abs{T_n}} \colon n \in \mathbb{N}} \text{ is bounded}
+\end{align*}
+    \begin{enumerate}
+        \item If $P$ implies $Q$, then both $X$ and $Y$ are Banach spaces
+        \item If $P$ implies $Q$, then only one of $X$ and $Y$ are Banach space
+        \item If $X$ is a Banach space, then $P$ implies $Q$
+        \item If $Y$ is a Banach space, then $P$ implies $Q$
+    \end{enumerate}
+
+\item Let $X = C\sbrak{0,1}$ with the norm $\abs{\abs{x}}_t  = \int_0^1 \abs{x\brak{t}}, dt$, $x \in C \sbrak{0,1}$ and $\Omega = \cbrak{f \in X^{\prime} \colon \abs{\abs{f}} = 1}$, where $X^{\prime}$ denotes the dual space of $X$. Let $C\brak{\Omega}$ be the linear space of continuous functions on $\Omega$ with the norm $\abs{\abs{u}} = sup _{s \in \Omega} \abs{u\brak{s}}$, $u \in C\brak{\Omega}$. Then
+    \begin{enumerate}
+        \item $X$ is linearly isometric with $C\brak{\Omega}$
+        \item $X$ is linearly isometric with a proper subspace of $C\brak{\Omega}$ 
+        \item there does not exist a linear isometry from $X$ into $C\brak{\Omega}$
+        \item every linear isometry from $X$ to $C\brak{\Omega}$ is onto
+    \end{enumerate}
+
+\item Let $X = R$ equipped with the topology generated by open intervals of the form $|bra
+a,b$ and sets of the form $\brak{a,b} \cup Q$. The which one of the following statements is correct?
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $X$ is regular
+        \item $X$ is normal
+        \item $\frac{X}{Q}$ is dense in $X$
+        \item $Q$ is dense in $X$
+    \end{enumerate}
+\end{multicols}
+
+\item Let $H$, $T$ and $V$ denote the Hamiltonian, the kinetic energy and the potential energy respectively of a mechanical system at time $t$. If $H$ contains $t$ explicitly, then $\frac{\partial H}{\partial t}$ is equal to
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\frac{\partial T}{\partial t} + \frac{\partial V}{\partial t}$
+        \item $\frac{\partial T}{\partial t} - \frac{\partial V}{\partial t}$
+        \item $\frac{\partial V}{\partial t} - \frac{\partial T}{\partial t}$
+        \item $-\frac{\partial V}{\partial t} - \frac{\partial V}{\partial t}$
+    \end{enumerate}
+\end{multicols}
+
+\item The Euler's equation for the variational problem: Minimize \\$I\sbrak{y\brak{x}} = \int_0^1 \brak{2x - xy - y^{\prime}} y^{\prime}, dx$, is 
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $2y^{{\prime}{\prime}} - y = 2$
+        \item $2y^{{\prime}{\prime}} + y = 2$
+        \item $y^{{\prime}{\prime}} + 2y = 0$
+        \item $2y^{{\prime}{\prime}} - y = 0$
+    \end{enumerate}
+\end{multicols}
+\end{enumerate}
+\end{document}
+
