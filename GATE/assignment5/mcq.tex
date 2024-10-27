@@ -1,0 +1,174 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{AE - 2014}
+\author{EE24BTECH11064 - Harshil Rathan}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\section*{1 Mark each}
+\begin{enumerate}
+\item A damped single degree of freedom system whose undamped natural frequency, $\omega_n = 10 \, \text{Hz}$, is subjected to sinusoidal external force. Power is half of the maximum for the two frequencies of $60.9469 \, \text{rad/s}$ and $64.7168 \, \text{rad/s}$. The damping factor associated with the vibrating system (in \%) is \underline{\hspace{4cm}}.
+\vspace{0.5cm}
+\item The boundary conditions for a rod with circular cross-section, under torsional vibration, are changed from fixed-free to fixed-fixed. The fundamental natural frequency of the fixed-fixed rod is \(k\) times that of the fixed-free rod. The value of \(k\) is
+\begin{multicols}{2}
+\begin{enumerate}
+      \item $1.5$
+        \item $\pi$
+        \item $2.0$
+        \item $0.5$
+\end{enumerate}
+\end{multicols}
+\vspace{0.5cm}
+\item Match the appropriate engine (in right column) with the corresponding aircraft (in left column) for most efficient performance of the engine.
+
+\begin{itemize}
+    \item[a.] Low speed transport aircraft \hspace{3cm} i. Ramjet
+    \item[b.] High subsonic civilian aircraft \hspace{2.8cm} ii. Turboprop
+    \item[c.] Supersonic fighter aircraft \hspace{3cm} iii. Turbojet
+    \item[d.] Hypersonic aircraft \hspace{4.4cm} iv. Turbofan
+\end{itemize}
+
+\begin{itemize}
+    \item[(A)] a -- iv, b -- iii, c -- i, d -- ii
+    \item[(B)] a -- ii, b -- i, c -- iii, d -- iv
+    \item[(C)] a -- i, b -- ii, c -- iv, d -- iii
+    \item[(D)] a -- ii, b -- iv, c -- iii, d -- i
+\end{itemize}
+
+\vspace{0.5cm}
+\item For a given fuel flow rate and thermal efficiency, the take-off thrust for a gas turbine engine burning aviation turbine fuel (considering fuel-air ratio $<1$) is
+
+\begin{itemize}
+    \item[(A)] Directly proportional to exhaust velocity
+    \item[(B)] Inversely proportional to exhaust velocity
+    \item[(C)] Independent of exhaust velocity
+    \item[(D)] Directly proportional to the square of the exhaust velocity
+\end{itemize}
+\vspace{0.5cm}
+\item For a fifty percent reaction axial compressor stage, following statements are given:
+\begin{enumerate}
+    \item[i.] Velocity triangles at the entry and exit of the rotor are symmetrical.
+    \item[ii.] The whirl or swirl component of absolute velocity at the entry of rotor and entry of stator are the same.
+\end{enumerate}
+Which of the following options are correct?
+\begin{itemize}
+    \item[(A)] Both I and II are correct statements
+    \item[(B)] I is correct but II is incorrect
+    \item[(C)] I is incorrect but II is correct
+    \item[(D)] Both I and II are incorrect
+\end{itemize}
+
+\vspace{0.5cm}
+\item A small rocket having a specific impulse of 200 s produces a total thrust of 98 kN, out of which 10 kN is the pressure thrust. Considering the acceleration due to gravity to be $9.8 \, \text{m/s}^2$, the propellant mass flow rate in kg/s is
+\begin{itemize}
+    \item[(A)] 55.1
+    \item[(B)] 44.9
+    \item[(C)] 50
+    \item[(D)] 60.2
+\end{itemize}
+
+\vspace{0.5cm}
+\item The thrust produced by a turbojet engine
+\begin{itemize}
+    \item[(A)] Increases with increasing compressor pressure ratio
+    \item[(B)] Decreases with increasing compressor pressure ratio
+    \item[(C)] Remains constant with increasing compressor pressure ratio
+    \item[(D)] First increases and then decreases with increasing compressor pressure ratio
+\end{itemize}
+\vspace{0.5cm}
+\item The moment coefficient measured about the centre of gravity and about aerodynamic centre of a given wing-body combination are 0.0065 and -0.0235 respectively. The aerodynamic centre lies 0.06 chord lengths ahead of the centre of gravity. The lift coefficient for this wing-body is \underline{\hspace{2cm}}.
+\vspace{0.5cm}
+
+\item the vertical ground load factor on a stationary aircraft parked in its hangar is:
+\begin{multicols}{2}
+\begin{itemize}
+    \item[(A)] 0
+    \item[(B)] -1
+    \item[(C)] Not defined
+    \item[(D)] 1
+\end{itemize}
+\end{multicols}
+
+\vspace{0.5cm}
+
+\item Under what conditions should a glider be operated to ensure minimum sink rate?
+\begin{multicols}{2}
+\begin{itemize}
+    \item[(A)] Maximum $C_L/C_D$
+    \item[(B)] Minimum $C_L/C_D$
+    \item[(C)] Maximum $C_D/C_L^{1/2}$
+    \item[(D)] Minimum $C_D/C_L^{1/2}$
+\end{itemize}
+\end{multicols}
+
+\vspace{0.5cm}
+
+\item In most airplanes, the Dutch roll mode can be excited by applying
+\begin{multicols}{2}
+\begin{itemize}
+    \item[(A)] A step input to the elevators
+    \item[(B)] A step input to the rudder
+    \item[(C)] A sinusoidal input to the ailerons
+    \item[(D)] An impulse input to the elevators
+\end{itemize}
+\end{multicols}
+
+\vspace{0.5cm}
+
+\item Considering $\mathbf{R}$ as the radius of the moon, the ratio of the velocities of two spacecraft orbiting moon in circular orbit at altitudes $\mathbf{R}$ and $\mathbf{2R}$ above the surface of the moon is \underline{\hspace{2cm}}.
+\vspace{0.5cm}
+
+\item If $\myvec{A}=\myvec{3 & -3\\-3 & 4}$. Then det$\brak{-[A]^2+7[A]-3[I]}$ is
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $0$
+    \item $-324$
+    \item $324$
+    \item $6$
+\end{enumerate}
+\end{multicols}
+\end{enumerate}
+\end{document}
+
