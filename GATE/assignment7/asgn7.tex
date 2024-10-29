@@ -1,0 +1,252 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{circuitikz}
+
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{PH - 2016}
+\author{EE24BTECH11064 - Harshil Rathan}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{enumerate}
+\item Protons and $\alpha$- particles of equal initial momenta are scattered off a gold foil in a Rutherford scattering experiment. The scattering for proton on gold and $\alpha$-particle on gold are $\sigma_p$ and $\sigma_{\alpha}$ respectively. The ratio $\frac{\sigma_\alpha}{\sigma_p}$ is \underline{\hspace{2cm}}. 
+
+\vspace{0.5cm}
+\item For the digital circuit given below, the output $X$ is 
+\begin{figure}[!ht]
+\centering
+\scalebox{0.8}{ % Adjust the scaling factor as needed
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\footnotesize]
+
+\draw (4.5,8.25) to[short] (4.75,8.25);
+\draw (4.5,7.75) to[short] (4.75,7.75);
+\draw (4.75,8.25) node[ieeestd or port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (6.5,8);
+\draw (4.75,9.75) node[ieeestd not port, anchor=in](port){} (port.out) to[short] (6.5,9.75);
+\draw (port.in) to[short] (4.5,9.75);
+\draw (7.75,9.25) to[short] (8,9.25);
+\draw (7.75,8.75) to[short] (8,8.75);
+\draw (8,9.25) node[ieeestd nand port, anchor=in 1, scale=0.89](port){} (port.out) to[short] (9.75,9);
+\draw [short] (4.5,9.75) -- (4.75,9.75)node[pos=0.5,left, fill=white]{A};
+\draw [short] (4.5,8.25) -- (4.75,8.25)node[pos=0,left, fill=white]{B};
+\draw [short] (4.5,7.75) -- (4.75,7.75)node[pos=0,left, fill=white]{C};
+\draw [short] (9.75,9) -- (10.25,9)node[pos=1,right, fill=white]{X};
+\draw (6.5,8) to[short] (6.5,8.75);
+\draw (6.5,9.75) to[short] (6.5,9.25);
+\draw (6.5,9.25) to[short] (8,9.25);
+\draw (6.5,8.75) to[short] (8,8.75);
+\end{circuitikz}
+}
+\end{figure}
+\begin{multicols}{2}
+  \begin{enumerate}
+      \item $\overline{\overline{A} + B \cdot C}$
+      \item $\overline{\overline{A} \cdot (B + C)}$
+      \item $\overline{A} \cdot (B + C)$
+      \item $A + \overline{(B \cdot C)}$
+  \end{enumerate}
+    
+\end{multicols}
+\vspace{0.5cm}
+\item The Fermi energies of two metals $X$and $Y$ are $5ev$ and $7ev$ and their Debye temperatues are 170K and 340K, respectively. The moalr specific heats of these metals at constant volume at low temparatues can be written ad $\brak{C_v}x=\gamma_X T+A_X T^3$ and $\brak{C_v}Y=\gamma_Y T+A_Y T^3$, where $\gamma$ and A are constants. Assuming that the thermal effective mass of the elctrons in the two metals are same,which of the follwoing is correct ?
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $\frac{\gamma_X}{\gamma_Y}=\frac{7}{5}$, $\frac{A_X}{A_Y}=8$
+    \item $\frac{\gamma_X}{\gamma_Y}=\frac{5}{7}$, $\frac{A_X}{A_Y}=\frac{1}{8}$
+    \item $\frac{\gamma_X}{\gamma_Y}=\frac{7}{5}$, $\frac{A_X}{A_Y}=\frac{1}{8}$
+    \item $\frac{\gamma_X}{\gamma_Y}=\frac{5}{7}$, $\frac{A_X}{A_Y}=8$
+\end{enumerate}
+\end{multicols}
+\vspace{0.5cm}
+\item A two-level system has energies zero and E. The level with zero energy is non-degenerate, while the level with energy E is triply degenerate. The mean energy of a classical particle in this system at temperature T is
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\frac{Ee^{-E/k_b T}}{1+3e^{-E/k_b T}}$
+        \item $\frac{3Ee^{-E/k_b T}}{1+e^{-E/k_b T}}$
+        \item $\frac{Ee^{-E/k_b T}}{1+e^{-E/k_b T}}$
+        \item $\frac{3Ee^{-E/k_b T}}{1+3e^{-E/k_b T}}$
+    \end{enumerate}
+\end{multicols}
+
+\vspace{0.5cm}
+\item A partical of rest mass M is moving along the positive x-direction.It decays into two photons $\gamma_1$ and $\gamma_2$ as shown in the figure. The energy of $\gamma_1$ is $1GeV$ and the energy of $\gamma_2$ is $0.82 GeV$. The value of M (in units of GeV/$c^2$ is \underline{\hspace{2cm}}. Give your answer upto two decimal places)
+
+\begin{circuitikz}
+\centering
+\tikzstyle{every node}=[font=\normalsize]
+\draw (5.75,9) to[short] (5.75,9);
+\draw [ line width=0.9pt](3.25,9.5) to[short] (6.5,9.5);
+\draw [->, >=Stealth] (3.25,9.5) -- (5.25,9.5)node[pos=0.9,above, fill=white]{M};
+\draw [line width=0.6pt, dashed] (6.5,9.5) -- (9,9.5);
+\draw [->, >=Stealth, dashed] (6.5,9.5) -- (8.25,11)node[pos=1,right, fill=white]{$\gamma_1$};
+\draw [->, >=Stealth, dashed] (6.5,9.5) -- (8,8)node[pos=1,right, fill=white]{$\gamma_2$};
+\draw [short] (7.5,9) -- (7.5,9)node[pos=0.5, fill=white]{$60^0$};
+\draw [short] (7,10) .. controls (7.25,10) and (7.5,10) .. (7.5,9.5)node[pos=0.45,right, fill=white]{$45^0$};
+\draw [short] (7,9) .. controls (7.25,9.25) and (7.25,9.25) .. (7.25,9.5);
+\end{circuitikz}
+\vspace{0.5cm}
+\item If x and p are the x components of the position and the momentum operators of a particle respectively, the commutator [$x^2,p^2$] is 
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $ih(xp-px)$
+    \item $2ih(xp-px)$
+    \item  $ih(xp+px)$
+    \item  $2ih(xp+px)$
+\end{enumerate}
+\end{multicols}
+\vspace{0.5cm}
+\item The x-y plane is the boundary between free space and a magnetic material with relative permeability $\mu_r$. The magnetic field in the free space is $B_x\hat{i}+B_z\hat{k}$. The magnetic field in the magnetic material is 
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $B_x\hat{i}+B_z\hat{k}$
+        \item $B_x\hat{i}+\mu_r B_z\hat{k}$
+        \item $\frac{1}{\mu_r}B_x\hat{i}+B_z\hat{k}$
+        \item $\mu_rB_x\hat{i}+B_z\hat{k}$
+    \end{enumerate}
+\end{multicols}
+\vspace{0.5cm}
+
+\item Let \( |l, m \rangle \) be the simultaneous eigenstates of \( L^2 \) and \( L_z \). Here \( \vec{L} \) is the angular momentum operator with Cartesian components \( (L_x, L_y, L_z) \), \( l \) is the angular momentum quantum number and \( m \) is the azimuthal quantum number. The value of \( \langle 1, 0 | (L_x + iL_y) | 1, -1 \rangle \) is
+\begin{multicols}{2}
+\begin{enumerate}
+    \item[(A)] $0$
+    \item[(B)] $h$
+    \item[(C)] $\sqrt{2}h$
+    \item[(D)] $\sqrt{3}h$
+\end{enumerate}
+\end{multicols}
+
+\vspace{0.5cm}
+
+\item For the parity operator P, whoch of the following statements is NOT true?
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $P^+=P$
+        \item $P^2=-P$
+        \item $P^2=I$
+        \item $P^+=P^{-1}$
+    \end{enumerate}
+\end{multicols}
+\vspace{0.5cm}
+
+\item For the transistor shown in the figure, assume $V_{BE}=0.7V$ and $\beta_{dc}=100$. If $V_{in}=5V$, $V_{out}\brak{\text{in Volts}}$ is \underline{\hspace{2cm}}. (Give your answer upto one decimal place)
+
+\begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+
+% NPN Transistor
+\draw (10.5,10.25) to[Tnpn, transistors/scale=1.19] (10.5,13.25);
+
+% Output Voltage Node
+\draw (10.5,12.25) to[short, -o] (11.75,12.25) node[right] {$V_{\text{out}}$};
+
+% Resistor between nodes (7,11.75) and (9.5,11.75)
+\draw (7,11.75) to[R, l={\normalsize 200k $\Omega$}] (9.5,11.75);
+
+% Resistor between transistor and ground
+\draw (10.5,10.25) to[R, l={\normalsize 1k $\Omega$}] (10.5,8.5);
+
+% Resistor above transistor
+\draw (10.5,15) to[R, l={\normalsize 3k $\Omega$}] (10.5,13.25);
+
+% Power Supply Node
+\draw (10.5,15) to[short, -o] (10.5,15.25) node[above] {10V};
+
+% Input Voltage Node
+\draw (7,11.75) to[short, -o] (6.75,11.75) node[above] {$V_{\text{in}}$};
+
+% Ground Node
+\draw (10.5,8.5) to (10.5,8.25) node[ground] {};
+\end{circuitikz}
+}%
+\end{figure}
+\vspace{0.5cm}
+\item The state of a system is given by 
+\begin{align*}
+    |\psi \rangle = |\phi_1\rangle+2|\phi_2\rangle+3|\phi_3\rangle
+\end{align*}
+where $|\phi_1\rangle$, $|\phi_2\rangle$ and $|\phi_3\rangle$ form an orthonormal set. The probability of finding the system in the state $|\phi_2\rangle$ is  \underline{\hspace{2cm}}. (Give your answer upto two decimal places)
+\vspace{0.5cm}
+\item According to the nuclear shee model, the respective groudn state spin-parity values of $^{15}_8O$ and $^{17}_8O$ nuclei are 
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\frac{1^{+}}{2},\frac{1^{-}}{2}$
+        \item $\frac{1^-}{2},\frac{5^+}{2}$
+        \item $\frac{3^-}{2},\frac{5^+}{2}$
+        \item $\frac{3^-}{2},\frac{1^-}{2}$
+    \end{enumerate}
+\end{multicols}
+\vspace{0.5cm}
+\item A particle of mass $m$ and energy $E$, moving in the positive x direction, is incident on a step potential at $x=0$, as indicated in the figure. The height of the potential is $V_0$, where $V_0>E$. At $x=x_0$, where $x_0>0$, the probability of finding the electron is $\frac{1}{e}$ times the probability of finding it at $x=0$. If $\alpha=\sqrt{\frac{2m\brak{V_0-E}}{H^2}}$, the value of $x_0$ is 
+\begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw (5.75,10.75) to[short] (8.5,10.75);
+\draw (8.5,10.75) to[short] (8.5,13);
+\draw (8.5,13) to[short] (11.25,13);
+\draw [dashed] (8.5,10.75) -- (11.25,10.75);
+\draw [short] (10.25,10.75) -- (10.25,11);
+\draw [short] (10.25,10.75) -- (10.25,10.5)node[pos=0.5, fill=white]{$x=x_0$};
+\draw [->, >=Stealth] (5.75,12.25) -- (7.5,12.25)node[pos=0.5,above, fill=white]{E};
+\draw [short] (9.5,13) -- (10.25,13)node[pos=0.5,above, fill=white]{$V_0$};
+\draw [short] (7.75,10.75) -- (8.5,10.75)node[pos=0.5,below, fill=white]{$x=x_0$};
+\end{circuitikz}
+}%
+\end{figure}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\frac{2}{\alpha}$
+        \item $\frac{1}{\alpha}$
+        \item $\frac{1}{2\alpha}$
+        \item $\frac{1}{4\alpha}$
+    \end{enumerate}
+\end{multicols}
+\end{enumerate}
+\end{document}
+
