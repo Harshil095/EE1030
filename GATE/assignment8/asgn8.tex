@@ -1,0 +1,192 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{circuitikz}
+
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{MA - 2018}
+\author{EE24BTECH11064 - Harshil Rathan}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{enumerate}
+\item Which of the following statements is true?
+\begin{enumerate}
+    \item Every group of order 12 has non-trivial proper normal subgroup
+    \item Some group of order 12 does not have a non-trivial proper normal subgroup
+    \item Every grooup of order 12 has a subgroup of order 6
+    \item Every group of order 12 has an element of order 12 
+\end{enumerate}
+
+\vspace{0.5cm}
+\item For an odd prime $p$, consider the ring $\mathbb{Z}[\sqrt{-p}]=\{a+b\sqrt{-p}:a,b\in \mathbb{Z}\}\subseteq \mathbb{C}$. Then the element 2 in $\mathbb{Z}[\sqrt{-p}]$ is 
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item a unit
+        \item a square
+        \item a prime 
+        \item irreducible
+    \end{enumerate}
+\end{multicols}
+
+\vspace{0.5cm}
+\item Consider the following two statements:
+\begin{itemize}
+    \item[P:] The matrix 
+    $\myvec{0&5\\0&7}$
+    has infinitely many LU factorizations, where \( L \) is lower triangular with each diagonal entry 1, and \( U \) is upper triangular.
+    
+    \item[Q:] The matrix 
+    $\myvec{0&0\\2&5}$
+    has no LU factorization, where \( L \) is lower triangular with each diagonal entry 1, and \( U \) is upper triangular.
+\end{itemize}
+Then which one of the following options is correct?
+
+\begin{enumerate}
+    \item P is TRUE and Q is FALSE
+    \item Both P and Q are TRUE
+    \item P is FALSE and Q is TRUE
+    \item Both P and Q are FALSE
+\end{enumerate}
+\vspace{0.5cm}
+\item If the characteristic curves of the partial differential eqauation $xu_{xx}+2x^2u_{xy}=u_{x}-1$ are $\mu\brak{x,y}=c_1$ and $v\brak{x,y}=c_2$, where $c_1$ and $c_2$ are constants, then 
+\begin{enumerate}
+    \item $\mu\brak{x,y}=x^2-y$, $v\brak{x,y}=y$\item  $\mu\brak{x,y}=x^2+y$, $v\brak{x,y}=y$
+    \item  $\mu\brak{x,y}=x^2+y$, $v\brak{x,y}=x^2$
+    \item  $\mu\brak{x,y}=x^2-y$, $v\brak{x,y}=x^2$
+\end{enumerate}
+
+\vspace{0.5cm}
+\item Let \( f : X \to Y \) be a continuous map from a Hausdorff topological space \( X \) to a metric space \( Y \). Consider the following two statements:
+
+\begin{itemize}
+    \item[\textbf{P}:] \( f \) is a closed map and the inverse image \( f^{-1}(y) = \{x \in X : f(x) = y\} \) is compact for each \( y \in Y \).
+    \item[\textbf{Q}:] For every compact subset \( K \subset Y \), the inverse image \( f^{-1}(K) \) is a compact subset of \( X \).
+\end{itemize}
+
+Which one of the following is true?
+
+\begin{enumerate}
+    \item Q implies P but P does NOT imply Q
+    \item P implies Q but Q does NOT imply P
+    \item P and Q are equivalent
+    \item neither P implies Q nor Q implies P
+\end{enumerate}
+\vspace{0.5cm}
+
+\item Let \( X \) denote \( \mathbb{R}^2 \) endowed with the usual topology. Let \( Y \) denote \( \mathbb{R} \) endowed with the co-finite topology. If \( Z \) is the product topological space \( Y \times Y \), then
+
+\begin{enumerate}
+    \item the topology of \( X \) is the same as the topology of \( Z \)
+    \item the topology of \( X \) is strictly coarser (weaker) than that of \( Z \)
+    \item the topology of \( Z \) is strictly coarser (weaker) than that of \( X \)
+    \item the topology of \( X \) cannot be compared with that of \( Z \)
+\end{enumerate}
+\vspace{0.5cm}
+\item Consider \( \mathbb{R}^n \) with the usual topology for \( n = 1, 2, 3 \). Each of the following options gives topological spaces \( X \) and \( Y \) with respective induced topologies. In which option is \( X \) home-omorphic to \( Y \)?
+
+\begin{enumerate}
+    \item \( X = \{(x, y, z) \in \mathbb{R}^3 : x^2 + y^2 = 1\}, \quad Y = \{(x, y, z) \in \mathbb{R}^3 : z = 0, \, x^2 + y^2 \neq 0\} \)
+    \item \( X = \{(x, y) \in \mathbb{R}^2 : y = \sin(1/x), \, 0 < x \leq 1\} \cup \{(x, y) \in \mathbb{R}^2 : x = 0, \, -1 \leq y \leq 1\}, \quad Y = [0, 1] \subseteq\mathbb{R} \)
+    \item \( X = \{(x, y) \in \mathbb{R}^2 : y = x \sin(1/x), \, 0 < x \leq 1\}, \quad Y = [0, 1] \subseteq \mathbb{R} \)
+    \item \( X = \{(x, y, z) \in \mathbb{R}^3 : x^2 + y^2 = 1\}, \quad Y = \{(x, y, z) \in \mathbb{R}^3 : x^2 + y^2 = z^2 \neq 0\} \)
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\item Let \( \{X_i\} \) be a sequence of independent Poisson(\(\lambda\)) variables and let \( W_n = \frac{1}{n} \sum_{i=1}^n X_i \). Then the limiting distribution of \( \sqrt{n}(W_n - \lambda) \) is the normal distribution with zero mean and variance given by
+\begin{multicols}{2}
+\begin{enumerate}
+    \item[(A)] 1
+    \item[(B)] \(\sqrt{\lambda}\)
+    \item[(C)] \(\lambda\)
+    \item[(D)] \(\lambda^2\)
+\end{enumerate}
+\end{multicols}
+\vspace{0.5cm}
+\item Let $X_1, X_2, \dots, X_n$ be independent and identically distributed random variables with probability density function given by
+\[
+f_X(x; \theta) = 
+\begin{cases}
+\theta e^{-\theta (x - 1)}, & x \geq 1, \\
+0, & \text{otherwise}.
+\end{cases}
+\]
+Also, let $\overline{X} = \frac{1}{n} \sum_{i=1}^n X_i$. Then the maximum likelihood estimator of $\theta$ is
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\frac{1}{\overline{X}}$
+        \item $\frac{1}{\overline{X}}-1$
+        \item $\frac{1}{\overline{X}-1}$
+        \item $\overline{X}$
+    \end{enumerate}
+\end{multicols}
+\vspace{0.5cm}
+\item Consider the Linear Programming Problem (LPP):  
+\[
+\text{Maximize } \alpha x_1 + x_2
+\]
+Subject to  
+\[
+2x_1 + x_2 \leq 6, \quad -x_1 + x_2 \leq 1, \quad x_1 + x_2 \leq 4, \quad x_1 \geq 0, \quad x_2 \geq 0,
+\]
+where $\alpha$ is a constant. If $(3, 0)$ is the only optimal solution, then
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\alpha<-2$
+        \item $-2<\alpha<1$
+        \item $1<\alpha<2$
+        \item $\alpha>2$
+    \end{enumerate}
+\end{multicols}
+\item Let $M_2(\mathbb{R})$ be the vector space of all $2 \times 2$ real matrices over the field $\mathbb{R}$. Define the linear transformation $S : M_2(\mathbb{R}) \to M_2(\mathbb{R})$ by $S(X) = 2X + X^T$, where $X^T$ denotes the transpose of the matrix $X$. Then the trace of $S$ equals \underline{\hspace{2cm}}.
+
+\vspace{0.5cm}
+\item Consider $\mathbb{R}^3$ with the usual inner product. If $d$ is the distance from $(1, 1, 1)$ to the subspace $\text{span}(\{1, 1, 0\}, \{0, 1, 1\})$ of $\mathbb{R}^3$, then $3d^2 = \underline{\hspace{2cm}}$.
+\vspace{0.5cm}
+\item Consider the matrix $A = I_9 - 2u u^T$ with $u = \frac{1}{3} [1, 1, 1, 1, 1, 1, 1, 1, 1]^T$, where $I_9$ is the $9 \times 9$ identity matrix and $u^T$ is the transpose of $u$. If $\lambda$ and $\mu$ are two distinct eigenvalues of $A$, then
+$|\lambda - \mu| = \underline{\hspace{2cm}}.$
+
+\end{enumerate}
+\end{document}
+
