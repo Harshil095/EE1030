@@ -1,0 +1,204 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{circuitikz}
+
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{MA - 2019}
+\author{EE24BTECH11064 - Harshil Rathan}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{enumerate}
+\item Let \( L \) denote the value of the line integral \( \oint_C (3x - 4x^2)y \, dx + (4xy^2 + 2y) \, dy \), where \( C \), a circle of radius 2 with center at origin of the \( xy \)-plane, is traversed once in the anti-clockwise direction. Then \( \frac{L}{\pi} \) is equal to \underline{\hspace{1cm}}.
+
+\vspace{0.5cm}
+\item The temperature \( T : \mathbb{R}^3 \setminus \{(0,0,0)\} \to \mathbb{R} \) at any point \( P(x, y, z) \) is inversely proportional to the square of the distance of \( P \) from the origin. If the value of the temperature \( T \) at the point \( R(0,0,1) \) is \( \sqrt{3} \), then the rate of change of \( T \) at the point \( Q(1,1,2) \) in the direction of \( \overrightarrow{QR} \) is equal to \underline{\hspace{1cm}} (round off to 2 places of decimal).
+
+\vspace{0.5cm}
+\item Let \( f \) be a continuous function defined on \( [0, 2] \) such that \( f(x) \geq 0 \) for all \( x \in [0, 2] \). If the area bounded by \( y = f(x) \), \( x = 0 \), \( y = 0 \) and \( x = b \) is \( \sqrt{3 + b^2} - \sqrt{3} \), where \( b \in (0, 2] \), then \( f(1) \) is equal to \underline{\hspace{1cm}} (round off to 1 place of decimal).
+
+\vspace{0.5cm}
+\item If the characteristic polynomial and minimal polynomial of a square matrix \( A \) are \( (x - 1)(x + 1)^4(x - 2)^5 \) and \( (x - 1)(x + 1)(x - 2) \), respectively, then the rank of the matrix \( A + I \) is \underline{\hspace{1cm}}, where \( I \) is the identity matrix of appropriate order.
+
+\vspace{0.5cm}
+\item Let \( \omega \) be a primitive complex cube root of unity and \( i = \sqrt{-1} \). Then the degree of the field extension \( \mathbb{Q} \left( i, \sqrt{3}, \omega \right) \) over \( \mathbb{Q} \) (the field of rational numbers) is \underline{\hspace{1cm}}.
+
+\vspace{0.5cm}
+
+\item Let 
+\begin{align*}
+    \alpha =\int_{C}\frac{e^{i\pi z}dz}{2z^2-5z+2}, C:\cos{t}+i\sin{t}, 0\leq t \leq 2\pi,i=\sqrt{-1}
+\end{align*}
+Then the gratest inetegr less tahn or equal to $|\alpha|$ is \underline{\hspace{1cm}}.
+\vspace{0.5cm}
+\item Consider the system:
+\begin{align*}
+    3x_1+x_2+2x_3-x_4&=a\\
+    x_1+x_2+x_3-2x_4&=3\\
+    x_1,x_2,x_3,x_4\geq 0
+\end{align*}
+If $x_1=1$, $x_2=b$, $x_3=0$, $x_4=c$ is a basic feasible solution of the above system (where a,b and c are real constants), then $a+b+c$ is equal to \underline{\hspace{1cm}}.
+\vspace{0.5cm}
+
+\item Let $f:\mathbb{C}\rightarrow \mathbb{C}$ be a function defined by $f(z)=z^6-5z^4+10$. Then the number of zeros of f in $\{z\in \mathbb{C}:|z|<2\}$ is \underline{\hspace{1cm}}.\\ ($\mathbb{C}$ is the set of all complex numbers)
+\vspace{0.5cm}
+\item Let 
+\begin{align*}
+    l^2=\{x=(x_1,x_2,\cdots):x_i\in\mathbb{C},\sum_{i=1}^\infty|x_i|^2<\infty
+\end{align*}
+be a normed linear space with the norm
+\begin{align*}
+    ||x||_{2}=(\sum_{i=1}^\infty|x_1|^2)^{\frac{1}{2}}
+\end{align*}
+Let $g:l^2\rightarrow \mathbb{C}$ be a bounded linear functional defined by 
+\begin{align*}
+    g(x)=\sum_{n=1}^\infty\frac{x_n}{3^n}\text{, } \text{for all}\text{ } x=(x_1,x_2,\cdots)\in l^2
+\end{align*}
+Then (sup\{|$g(x)|:||x||_2\leq1\})^2$ is equal to \underline{\hspace{1cm}}.(round off to 3 places of decimal).\\($\mathbb{C}$ is the set of all complex numbers)
+\vspace{0.5cm}
+\item For the linear programming problem (LPP): 
+\[
+\text{Maximize } Z = 2x_1 + 4x_2,
+\]
+subject to
+\[
+- x_1 + 2x_2 \leq 4,
+\]
+\[
+3x_1 + \beta x_2 \leq 6,
+\]
+\[
+x_1, x_2 \geq 0, \quad \beta \in \mathbb{R},
+\]
+\((\mathbb{R} \text{ is the set of all real numbers})\).
+
+Consider the following statements:
+
+\begin{itemize}
+    \item[I.] The LPP always has a finite optimal value for any \( \beta \geq 0 \).
+    \item[II.] The dual of the LPP may be infeasible for some \( \beta \geq 0 \).
+    \item[III.] If for some \( \beta \), the point \( (1,2) \) is feasible to the dual of the LPP, then \( Z \leq 16 \), for any feasible solution \( (x_1, x_2) \) of the LPP.
+    \item[IV.] If for some \( \beta \), \( x_1 \) and \( x_2 \) are the basic variables in the optimal table of the LPP with \( x_1 = \frac{1}{2} \), then the optimal value of dual of the LPP is 10.
+\end{itemize}
+
+Then which of the above statements are \textbf{TRUE}?
+
+\begin{enumerate}
+    \item I and III only
+    \item I, III and IV only
+    \item III and IV only
+    \item II and IV only
+\end{enumerate}
+\vspace{0.5cm}
+\item Let \( f : \mathbb{R}^2 \rightarrow \mathbb{R} \) be defined by
+\[
+f(x, y) = \begin{cases} 
+      (x^2 + y^2) \sin \left( \frac{1}{x^2 + y^2} \right), & \text{if } (x, y) \neq (0,0), \\
+      0, & \text{if } (x, y) = (0,0).
+   \end{cases}
+\]
+
+Consider the following statements:
+
+\begin{itemize}
+    \item[I.] The partial derivatives \( \frac{\partial f}{\partial x}, \frac{\partial f}{\partial y} \) exist at \( (0, 0) \) but are unbounded in any neighbourhood of \( (0, 0) \).
+    \item[II.] \( f \) is continuous but not differentiable at \( (0, 0) \).
+    \item[III.] \( f \) is not continuous at \( (0, 0) \).
+    \item[IV.] \( f \) is differentiable at \( (0, 0) \).
+\end{itemize}
+
+Which of the above statements is/are \textbf{TRUE}?
+
+\begin{enumerate}
+    \item I and II only
+    \item I and IV only
+    \item II only
+    \item III only
+\end{enumerate}
+\vspace{0.5cm}
+\item et \( K = [k_{i,j}]_{i,j=1}^{\infty} \) be an infinite matrix over \( \mathbb{C} \) (the set of all complex numbers) such that
+\begin{itemize}
+    \item[(i)] for each \( i \in \mathbb{N} \) (the set of all natural numbers), the \( i^{\text{th}} \) row \( (k_{i,1}, k_{i,2}, \dots) \) of \( K \) is in \( \ell^1 \) and
+    \item[(ii)] for every \( x = (x_1, x_2, \dots) \in \ell^1 \), \( \sum_{j=1}^{\infty} k_{i,j} x_j \) is summable for all \( i \in \mathbb{N} \), and \( (y_1, y_2, \dots) \in \ell^1 \), where \( y_i = \sum_{j=1}^{\infty} k_{i,j} x_j \).
+\end{itemize}
+
+Let the set of all rows of \( K \) be denoted by \( E \). Consider the following statements:
+\begin{itemize}
+    \item[P:] \( E \) is a bounded set in \( \ell^1 \).
+    \item[Q:] \( E \) is a dense set in \( \ell^{\infty} \).
+\end{itemize}
+
+\[
+\ell^1 = \left\{ (x_1, x_2, \dots): x_i \in \mathbb{C}, \sum_{i=1}^{\infty} |x_i| < \infty \right\}
+\]
+\[
+\ell^{\infty} = \left\{ (x_1, x_2, \dots): x_i \in \mathbb{C}, \sup_{i \in \mathbb{N}} |x_i| < \infty \right\}
+\]
+
+Which of the above statements is/are TRUE?
+
+\begin{enumerate}
+    \item Both P and Q
+    \item P only
+    \item Q only
+    \item Neither P nor Q
+\end{enumerate}
+
+
+\vspace{0.5cm}
+\item Consider the following heat conduction problem for a finite rod
+\[
+\frac{\partial u}{\partial t} = \frac{\partial^2 u}{\partial x^2} - xe^{-t} - 2t, \quad t > 0, \quad 0 < x < \pi,
+\]
+with the boundary conditions \( u(0,t) = -t^2 \), \( u(\pi,t) = -\pi e^{-t} - t^2 \) and the initial condition \( u(x,0) = \sin x - \sin^3 x - x, \quad 0 \leq x \leq \pi \). If \( v(x,t) = u(x,t) + xe^{-t} + t^2 \), then which one of the following is CORRECT?
+
+\begin{enumerate}
+    \item[(A)] \( v(x,t) = \frac{1}{4} \left( e^t \sin x + e^{-9t} \sin 3x \right) \)
+    \item[(B)] \( v(x,t) = \frac{1}{4} \left( 7 e^t \sin x - e^{-9t} \sin 3x \right) \)
+    \item[(C)] \( v(x,t) = \frac{1}{4} \left( e^t \sin x + e^{-3t} \sin 3x \right) \)
+    \item[(D)] \( v(x,t) = \frac{1}{4} \left( 3 e^t \sin x - e^{-3t} \sin 3x \right) \)
+\end{enumerate}
+\end{enumerate}
+\end{document}
+
