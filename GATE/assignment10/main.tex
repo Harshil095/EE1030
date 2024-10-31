@@ -1,0 +1,266 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{circuitikz}
+
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{XE - 2019}
+\author{EE24BTECH11064 - Harshil Rathan}
+\maketitle
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+\begin{enumerate}
+\item The power input $P$ to a centrifugal pump is a function of the volume flow rate $Q$, impeller
+diameter $D$, rotational speed $\Omega$, fluid density $\rho$, dynamic viscosity $\mu$, and surface
+roughness $\epsilon$. To carry out a dimensional analysis using Buckingham's $\pi$ theorem, which one 
+of the following sets can be taken as the set of repeating variables?
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $Q,\Omega,D$
+        \item $Q,\epsilon,D$
+        \item $\epsilon,D,\rho$
+        \item $D,\rho,\Omega$
+    \end{enumerate}
+\end{multicols}
+\item Consider the two-dimentional laminar flow of wtaer $(\mu=0.001 Ns/m^2)$between two infinitely long parallel plates $0.1m$ apart as shown in the figure below. The velocity profile at any location is given by $u(y)=100(0.1y-y^2)m/s$ where y is in m. The magnitude if shear stress(in $N/m^2$, rounded off to 2 decimal places) acting on the bottom plate is \underline{\hspace{1cm}} 
+\begin{figure}[H]
+\centering
+\resizebox{0.5\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw (2,11) to[short] (7.5,11);
+\draw (3,14) to[short] (3,11);
+\draw (2,12.5) to[short] (6,12.5);
+\draw (2.5,11) to[short] (2,10.5);
+\draw (3,11) to[short] (2.5,10.5);
+\draw (3.5,11) to[short] (3,10.5);
+\draw (4,11) to[short] (3.5,10.5);
+\draw (4.5,11) to[short] (4,10.5);
+\draw (5,11) to[short] (4.5,10.5);
+\draw (5.5,11) to[short] (5,10.5);
+\draw (2,12.5) to[short] (2.5,13);
+\draw (2.5,12.5) to[short] (3,13);
+\draw (3,12.5) to[short] (3.5,13);
+\draw (3.5,12.5) to[short] (4,13);
+\draw (4,12.5) to[short] (4.5,13);
+\draw (4.75,12.5) to[short] (5.25,13);
+\draw (5.5,12.5) to[short] (6,13);
+\draw [<->, >=Stealth] (5.5,12.5) -- (5.5,11)node[pos=0.5, fill=white]{0.1m};
+\draw [short] (3,12.5) .. controls (4.25,12) and (4.25,11.5) .. (3,11)node[pos=0.5,right, fill=white]{U(y)};
+\draw [->, >=Stealth] (3,12.25) -- (3.25,12.25);
+\draw [->, >=Stealth] (3,12) -- (3.75,12);
+\draw [->, >=Stealth] (3,11.75) -- (4,11.75);
+\draw [->, >=Stealth] (3,11.5) -- (3.75,11.5);
+\draw [->, >=Stealth] (3,11.25) -- (3.25,11.25);
+\draw [->, >=Stealth] (3,13.75) -- (3,14.5)node[pos=0.5, fill=white]{y};
+\draw [->, >=Stealth] (7,11) -- (7.5,11)node[pos=0.5, fill=white]{x};
+\end{circuitikz}
+}%
+\end{figure}
+
+\vspace{0.5cm}
+
+\item The maximum velocity in a fully developed laminar incompressible flow through a circular pipe of constant cross-sectional area is $6m/s$. The average velocity (in m/s) of the flow is \underline{\hspace{1cm}} 
+
+\vspace{0.5cm}
+\item The theoretical discharge for the flow through an orifice-meter is $40m^3/s$. If the measured discharge in an experiment is $32m^3/s$, then the discharge coefficient (rounded off to one decimal place) is \underline{\hspace{1cm}} 
+
+\vspace{0.5cm}
+
+\item Consider the flow between two infinitely long parallel plates of large iwdth separated by a distance $2H$. The upper plate is moving with a constant velocity $U$ while the lower plate is stationary. The volumetric flow rate per unit width of the plate is 
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item 0.25 $UH$
+         \item 0.5 $UH$
+          \item  $UH$
+           \item 2 $UH$
+    \end{enumerate}
+\end{multicols}
+\vspace{0.5cm}
+\item The velocity field in Cartesian coordinates in a two-dimensional steady incompressible flow of a fluid with density $\rho$ is \textbf{V}=$x\hat{i}-y\hat{j}$. Assuming no body and line forces, the magnitude of pressure gradient $\Delta p$ at the point (1,1) is
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\sqrt{2}\rho$
+        \item $\rho$
+        \item $\frac{\rho}{\sqrt{2}}$
+        \item $\frac{\rho}{2}$
+    \end{enumerate}
+\end{multicols}
+
+\item A two-dimentional velocity field in cartesian coordinates is defined by \textbf{V}=$y\hat{i}-x\hat{j}$. This flow is 
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item compressible and rotational 
+        \item compressible and irrotational 
+        \item incompressible and rotational 
+        \item incompressible and irrotational 
+    \end{enumerate}
+\end{multicols}
+\item Assertion[a]:The streamlines in a free vortex flow are concentric circles.\\
+Reasoning[r]: There exists only radial component for the velocity field in a free vortex flow.
+\begin{enumerate}
+    \item[a)] Both [a] and [r] are true and [r] is the correct reason for [a]
+    \item[b)] Both [a] and [r] are true but [r] is nor the correct reason for [a]
+    \item[c)]  [a] is true but [r] is false 
+    \item[d)]  [a] is false but [r] is true    
+\end{enumerate}
+
+\item The velocity components in Cartesian coordinates in a two-dimensional incompressible flow are $u=e^y\cos{x}$ and $v=e^y\sin{x}$. The magnitude of total acceleration at the point(-1,1) is
+\begin{multicols}{2}   
+\begin{enumerate}
+    \item 0
+    \item 1
+    \item $e$
+    \item $e^2$
+\end{enumerate}
+\end{multicols}
+\vspace{0.5cm}
+\item For steady laminar flow at zero incidence over a flat plate, the component of velocity parallel to the plate in the boundary layer is given by $u(y)=a+by+cy^2$, where $y$ is the distance measured normal to the flat plane. If $\mu$ is the coefficient of dynamic viscosity, U is the velocity parallel to the wall at the edge of the boundary layer thickness, the wall shear stress is given by 
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item $\frac{\mu U}{\delta}$
+        \item $\frac{2\mu U}{\delta}$
+        \item $2\mu(\frac{U}{\delta})^2$
+        \item $\frac{3\mu U}{\delta}$
+    \end{enumerate}
+\end{multicols}
+\item A fluid with constant density of $1kg/m^3$ flows past a semi-cylindrical structure witha freestream velocity of $2m/s$ as shown in the figure below. The difference in static pressure between points P and Q is $10 N/m^2$. If the gravitational acceleration g is $10m/s^2$ and the flow is assumed to be potential, what is the radius r (in m) of te semi-cylindrical structure?
+\begin{figure}[H]
+\centering
+\resizebox{0.5\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [short] (0.25,13.5) -- (3,13.5);
+\draw [short] (4.75,13.5) -- (7,13.5);
+\draw [short] (3,13.5) .. controls (3,14.75) and (4.75,14.75) .. (4.75,13.5);
+\draw [->, >=Stealth] (-0.25,15.25) -- (0.75,15.25)node[pos=0.5,above, fill=white]{2m/s};
+\draw [->, >=Stealth] (-0.25,14.75) -- (0.75,14.75);
+\draw [->, >=Stealth] (-0.25,14.25) -- (0.75,14.25);
+\draw [->, >=Stealth] (-0.25,13.75) -- (0.75,13.75);
+\draw [->, >=Stealth] (5.75,15.5) -- (5.75,14.75)node[pos=0.5,left, fill=white]{g};
+\draw [<->, >=Stealth] (2.25,14.5) -- (2.25,13.5)node[pos=0.5,left, fill=white]{r};
+\draw [dashed] (2.25,14.5) -- (3.75,14.5)node[pos=0.5,above, fill=white]{Q};
+\draw [short] (0,13.5) -- (0.25,13.5)node[pos=0.5,below, fill=white]{P};
+\end{circuitikz}
+}%
+
+\end{figure}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item 1
+        \item 0.8
+        \item 0.6
+        \item 0.4
+    \end{enumerate}
+\end{multicols}
+\item The mercury manometer shown in the figure below is connected to a water pipe at one end while the other end is open to atmosphere. The density of wate ris $1000kg/m^3$, the specific gravity of mercury is $13.6$ and the gravitational acceleration g is $10m/s^2$. The gauge pressure $p_w$((in $kN/m^2$, rounded off to 2 decimal places) in the water pipe is  \underline{\hspace{1cm}} 
+\begin{figure}[H]
+\centering
+\resizebox{0.5\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\small]
+\draw  (0.75,15.75) circle (0.75cm);
+\draw [short] (1.5,16) -- (2.5,16);
+\draw [short] (1.5,15.75) -- (2.5,15.75);
+\draw [short] (2.5,15.75) -- (2.5,13.25);
+\draw [short] (2.5,16) -- (2.75,16);
+\draw [short] (2.75,16) -- (2.75,13.75);
+\draw [short] (2.75,13.75) -- (2.75,13.5);
+\draw [short] (2.75,13.5) -- (4,13.5);
+\draw [short] (2.5,13.25) -- (4.5,13.25);
+\draw [short] (4,13.5) -- (4,19.25);
+\draw [short] (4.5,13.25) -- (4.5,19.25);
+\draw [->, >=Stealth] (2.75,19) -- (2.75,18.25)node[pos=0.5,left, fill=white]{g};
+\draw [->, >=Stealth] (1.5,16.75) -- (1,16)node[pos=0.5,right, fill=white]{Water};
+\draw [short] (2.25,14.75) -- (2.5,14.75);
+\draw [short] (2.25,13.5) -- (2.5,13.5);
+\draw [short] (2.75,15) -- (3,15);
+\draw [short] (4.75,19) -- (5,19);
+\draw [short] (4.75,13.75) -- (5,13.75);
+\draw [<->, >=Stealth] (5,19) -- (5,13.75)node[pos=0.5,below, fill=white]{35cm};
+\draw [<->, >=Stealth] (3,16) -- (3,15)node[pos=0.5, fill=white]{5cm};
+\draw [<->, >=Stealth] (2.25,14.75) -- (2.25,13.5)node[pos=0.5, fill=white]{10cm};
+\draw [->, >=Stealth] (3.5,12.75) -- (3.5,13.25)node[pos=0.5,below, fill=white]{Mercury};
+\draw [dashed] (2.5,14.75) -- (2.75,14.75);
+\draw [dashed] (2.5,14.75) -- (2.5,13.25);
+\draw [dashed] (2.75,14.75) -- (2.75,13.25);
+\draw [dashed] (2.5,14.75) -- (2.75,14.75);
+\draw [dashed] (2.5,14.75) -- (2.75,13.5);
+\draw [dashed] (2.5,13.25) -- (2.75,14.5);
+\draw [dashed] (2.5,14.75) -- (2.75,14.5);
+\draw [dashed] (2.75,13.25) -- (2.5,13.75);
+\draw [dashed] (2.75,13.5) -- (2.5,14.25);
+\draw [dashed] (2.75,14.25) -- (2.5,14.75);
+\draw [dashed] (2.5,13.5) -- (4,13.25);
+\draw [dashed] (3.25,13.5) -- (4.5,13.25);
+\draw [dashed] (4,13.5) -- (4.5,13.5);
+\draw [dashed] (4,13.5) -- (4,19);
+\draw [dashed] (4.25,19) -- (4.25,13.5);
+\draw [dashed] (4.25,19) -- (4.25,14.5);
+\draw [dashed] (4.25,19.25) -- (4.25,13.5);
+\draw [dashed] (4.5,19.25) -- (4.5,13.5);
+\draw [dashed] (4,19.25) -- (4.5,19.25);
+\draw [dashed] (4,18.75) -- (4.5,18.75);
+\draw [dashed] (4,19) -- (4.5,19);
+\draw [dashed] (4,18.5) -- (4.75,18.5);
+\draw [dashed] (4,18.25) -- (4.5,18.25);
+\draw [dashed] (4,18) -- (4.5,18);
+\draw [dashed] (4,17.75) -- (4.5,17.75);
+\draw [dashed] (4,17.25) -- (4.25,17.25);
+\draw [dashed] (4,17) -- (4.5,17);
+\draw [dashed] (4,16.5) -- (4.5,16.5);
+\draw [dashed] (4,16) -- (4.5,16);
+\draw [dashed] (4,15.5) -- (4.5,15.5);
+\draw [dashed] (4,15) -- (4.5,15);
+\draw [dashed] (4,14.5) -- (4.5,14.5);
+\draw [dashed] (4,14) -- (4.5,14);
+\draw [dashed] (4,13.75) -- (4.5,13.75);
+\draw [dashed] (4,13.25) -- (4,13.5);
+\draw [dashed] (3,13.25) -- (3,13.5);
+\end{circuitikz}
+}%
+\end{figure}
+\item Water ($\rho=1000kg/m^3$, $\mu=0.001 Ns/m^2$) flows through a smooth circular pipe of radius 0.05m. If the flow Reynolds number is 1000, then the pressure drop (in $N/m^2$, rounded off to 2 decimal places) over a length of 5m will be  \underline{\hspace{1cm}} 
+\end{enumerate}
+\end{document}
+
