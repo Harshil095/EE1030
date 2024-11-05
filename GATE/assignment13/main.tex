@@ -1,0 +1,590 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+\usepackage{gvv-book}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{circuitikz}
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and floats
+
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\renewcommand{\thetable}{\theenumi}
+
+
+
+
+% Marks the beginning of the document
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{EE - 2023}
+\author{EE24BTECH11064 - Harshil Rathan}
+\maketitle
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+
+\begin{enumerate}
+    \item Consider a unity-gain negative feedback system consisting of the plant $G(s)$(Given below) and a proportional-integral controller. Let the proportional gain and the integral gain be 3 and 1, respectively. For a unit step, reference input, the final values of the controller output and the plant output, respectively, are 
+    \begin{align*}
+        G(s)=\frac{1}{s-1}
+    \end{align*}
+    \begin{multicols}{2}
+    \begin{enumerate}
+            \item $\infty,\infty$
+            \item 1,0
+             \item 1,-1
+            \item -1.1
+    \end{enumerate}
+    \end{multicols}
+    \bigskip
+\item The following columns present various modes of induction machine operation and the ranges of slip
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\multicolumn{1}{|c|}{\textbf{A}} & \multicolumn{1}{c|}{\textbf{B}} \\
+\hline
+\textbf{Mode of operation} &  \textbf{Range of Slip} \\
+\hline
+a.  Running in generator mode & p) From 0.0 to 1.0 \\
+b. Running in motor mode     & q) From 1.0 to 2.0 \\
+c.  Plugging in motor mode    & r) From -1.0 to 0.0 \\
+\hline
+\end{tabular}
+\end{center}
+The correct matching between the elements in column A with those of column B is
+\begin{enumerate}
+        \item a-r, b-p, and c-q
+        \item a-r, b-q, and c-p
+        \item a-p, b-r, and c-q
+        \item a-q, b-p, and c-r
+\end{enumerate}
+\bigskip
+\item A 10-pole, 50 Hz, 240 V, single phase induction motor runs at 540 RPM while driving rated load. Th frequency of induced rotor currents due to backward field is 
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item 100 Hz
+        \item  95 Hz
+        \item 10 Hz
+        \item 5 Hz
+    \end{enumerate}
+\end{multicols}
+\bigskip
+\item A continuos-time system that is initially at rest is described by 
+\begin{align*}
+    \frac{dy(t)}{dt}+3y(t)=2x(t)
+\end{align*}
+Where x(t) is the input voltage and y(t) is the output voltage. The impulse response of the system is 
+\begin{enumerate}
+        \item $3e^{-2t}$
+        \item $\frac{1}{3}e^{-2t}u(t)$
+        \item $2e^{-3t}u(t)$
+        \item $2e^{-3t}$
+\end{enumerate}
+\bigskip
+\item The Fourier transform $X(\omega)$ of the signal $x(t)$ is given by
+\[
+X(\omega) =
+\begin{cases}
+1, & \text{for } |\omega| < W_0 \\
+0, & \text{for } |\omega| > W_0
+\end{cases}
+\]
+Which one of the following statements is true?
+\begin{enumerate}
+    \item $x(t)$ tends to be an impulse as $W_0 \to \infty$.
+    \item $x(0)$ decreases as $W_0$ increases.
+    \item At $t = \frac{\pi}{2W_0}$, $x(t) = -\frac{1}{\pi}$.
+    \item At $t = \frac{\pi}{2W_0}$, $x(t) = \frac{1}{\pi}$.
+\end{enumerate}
+\bigskip
+\item The Z-transform of a discrete signal x[n] is 
+\begin{align*}
+    X(z)=\frac{4z}{(z-\frac{1}{5})(z-\frac{2}{3})(z-3)} \text{with ROC = R.}
+\end{align*}
+Which one of the following statements is true?
+\begin{enumerate}
+
+        \item Discrete-time Fourier transform of x[n] converges if R is $|z|>3$
+        \item Discrete-time Fourier transform of x[n] converges if R is $\frac{2}{3}<|z|<3$
+        \item Discrete-time Fourier transform of x[n] converges if R is such that x[n] is a left-sided sequence
+        \item Discrete-time Fourier transform of x[n] converges if R is such that x[n] is a right-sided sequence
+\end{enumerate}
+\bigskip
+\item For the three-bus power system shown in the figure, the trip signals to the circuit breakers $B_1$ to $B_9$ are provided by over current relays $R_1$ to $R_9$, respectively, some of which have directional properties also. The necessary condition for the system to be protected for short circuit fault at any part of the system between the bus 1 and the R-L loads with isolation of minimum portion of the network using minimum number of directional relays is
+\begin{figure}[H]
+\centering
+\resizebox{0.8\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+% Draw a single sinusoidal voltage source
+\draw (3.25,8.75) to[sinusoidal voltage source, sources/symbol/rotate=auto] (4.5,8.75);
+% Connect the source to B_9
+\draw (4.5,8.75) -- (5.25,8.75) node[above] {$B_9$};
+
+% Rest of the circuit
+\draw (5.25,8.75) to[short] (5.75,8.75);
+\draw (5.75,8.75) to[short] (5.75,9.75);
+\draw (5.75,8.75) to[short] (5.75,7.75);
+\draw (5.75,9.5) to[short, -o] (6.25,9.5) node[above] {$B_1$};
+\draw (5.75,8) to[short, -o] (6.25,8) node[below] {$B_2$};
+\draw [short] (6.25,9.5) -- (9,9.5);
+\draw [short] (6.25,8) -- (9,8);
+\draw (9,9.5) to[short, -o] (9.75,9.5) node[above] {$B_3$};
+\draw (9,8) to[short, -o] (9.75,8) node[below] {$B_4$};
+\draw [short] (9.75,9.5) -- (10.25,9.5);
+\draw [short] (9.75,8) -- (10.25,8);
+\draw [short] (10.25,9.75) -- (10.25,7.75);
+\draw (10.25,9.25) to[short, -o] (10.75,9.25) node[above] {$B_5$};
+\draw (10.25,7.75) to[short, -o] (10.75,7.75) node[above] {$B_6$};
+\draw [short] (10.75,9.25) -- (12.75,9.25);
+\draw [short] (10.75,7.75) -- (11.5,7.75);
+\draw [->, >=Stealth] (11.5,7.75) -- (11.5,7);
+\draw (12.75,9.25) to[short, -o] (13,9.25) node[above] {$B_7$};
+\draw [short] (13,9.25) -- (13.5,9.25);
+\draw [short] (13.5,9.75) -- (13.5,8.75);
+\draw (13.5,9.25) to[short, -o] (14,9.25) node[above] {$B_8$};
+\draw [short] (14,9.25) -- (14.75,9.25);
+\draw [->, >=Stealth] (14.75,9.25) -- (14.75,8.5);
+\draw  (5.75,10.25) circle (0.25cm);
+\draw  (10.25,10.25) circle (0.25cm);
+\draw  (13.5,10.5) circle (0.25cm);
+\node [font=\normalsize] at (5.75,10.25) {1};
+\node [font=\normalsize] at (10.25,10.25) {2};
+\node [font=\normalsize] at (13.5,10.5) {3};
+\node [font=\normalsize] at (12,7) {$R-L$};
+\node [font=\normalsize] at (15.25,8.5) {$R-L$};
+\node [font=\normalsize] at (12,6.5) {$load$};
+\node [font=\normalsize] at (15,8) {$load$};
+\node [font=\normalsize] at (7.5,9.75) {$line 1$};
+\node [font=\normalsize] at (7.5,7.75) {$line 2$};
+\node [font=\normalsize] at (11.75,9.5) {$line 3$};
+\end{circuitikz}
+}%
+\end{figure}
+
+\begin{enumerate}
+    \item $R_3$ and $R_4$ are directional over current relays blocking faults towards bus 2
+    \item $R_3$ and $R_4$ are directional over current relays blocking faults towards bus 2 and $R_7$ is directional over current relay blocking faults towards bus 3
+    \item $R_3$ and $R_4$ are directional over current relays blocking faults towards line 1 and line 2, respectively, $R_7$ is directional over current relay blocking faults towards line 3 and $R_5$ is directional over current relay blocking faults towards bus 2 
+    \item $R_3$ and $R_4$ are directional over current relays blocking faults towards line 1 and line 2, respectively.
+
+\end{enumerate}
+\bigskip
+\item The expressions of fuel cost of two thermal generating units as a function of the respective power generation $P_{G1}$ and $P_{G2}$ are given as
+\[
+F_1(P_{G1}) = 0.1a P_{G1}^2 + 40 P_{G1} + 120 \text{ Rs/hour} \quad 0 \text{ MW} \leq P_{G1} \leq 350 \text{ MW}
+\]
+\[
+F_2(P_{G2}) = 0.2 P_{G2}^2 + 30 P_{G2} + 100 \text{ Rs/hour} \quad 0 \text{ MW} \leq P_{G2} \leq 300 \text{ MW}
+\]
+where $a$ is a constant. For a given value of $a$, optimal dispatch requires the total load of 290 MW to be shared as $P_{G1} = 175 \text{ MW}$ and $P_{G2} = 115 \text{ MW}$. With the load remaining unchanged, the value of $a$ is increased by 10\% and optimal dispatch is carried out. The changes in $P_{G1}$ and the total cost of generation, $F \,(= F_1 + F_2)$ in Rs/hour will be as follows:
+\begin{enumerate}
+
+        \item $P_{G1}$ will decrease and F will increase
+        \item Both $P_{G1}$ and F will increase
+        \item $P_{G1}$ will increase and F will decrease
+        \item Both $P_{G1}$ and F will decrease
+    
+\end{enumerate}
+\bigskip
+\item The four stator conductors (A, A', B and B') of a rotating machine are carrying DC currents of the same value, the directions of which are shown in the figure (i). The rotor coils \( a-a' \) and \( b-b' \) are formed by connecting the back ends of conductors 'a' and 'a'' and 'b' and 'b'', respectively, as shown in figure (ii). The e.m.f. induced in coil \( a-a' \) and coil \( b-b' \) are denoted by \( E_{a-a'} \) and \( E_{b-b'} \), respectively. If the rotor is rotated at uniform angular speed \( \omega \) rad/s in the clockwise direction then which of the following correctly describes the \( E_{a-a'} \) and \( E_{b-b'} \)?
+\begin{figure}[H]
+\centering
+\resizebox{0.5\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw  (7.25,8.25) circle (4cm);
+\draw [short] (4.25,8) .. controls (4.25,9.75) and (5.75,11.25) .. (7,11);
+\draw [short] (7,11) -- (7,11.5);
+\draw [short] (7,11.5) -- (7.5,11.5);
+\draw [short] (7.5,11.5) -- (7.5,11);
+\draw [short] (4.25,8) -- (3.75,8);
+\draw [short] (3.75,8) -- (3.75,7.5);
+\draw [short] (3.75,7.5) -- (4.25,7.5);
+\draw [short] (4.25,7.5) .. controls (4.75,6) and (6,5.5) .. (7,5.25);
+\draw [short] (7,5.25) -- (7,4.75);
+\draw [short] (7,4.75) -- (7.5,4.75);
+\draw [short] (7.5,4.75) -- (7.5,5.25);
+\draw [short] (7.5,11) .. controls (9.25,10.75) and (10,9.5) .. (10,8.25);
+\draw [short] (7.5,5.25) .. controls (9.5,5.5) and (10,7) .. (10,7.75);
+\draw [short] (10,8.25) -- (10.5,8.25);
+\draw [short] (10.5,8.25) -- (10.5,7.75);
+\draw [short] (10.5,7.75) -- (10,7.75);
+\draw [short] (5,8.25) .. controls (5.25,9.75) and (6,10.25) .. (7,10.25);
+\draw [short] (5,8.25) -- (5.5,8.25);
+\draw [short] (5.5,8.25) -- (5.5,7.75);
+\draw [short] (5,7.75) -- (5.5,7.75);
+\draw [short] (7,10.25) -- (7,9.75);
+\draw [short] (7,9.75) -- (7.5,9.75);
+\draw [short] (7.5,9.75) -- (7.5,10.25);
+\draw [short] (5,7.75) .. controls (5.5,6.5) and (6,6) .. (7,6);
+\draw [short] (7.5,10.25) .. controls (8.75,10.25) and (9.25,9.25) .. (9.25,8.25);
+\draw [short] (7.5,6) .. controls (8.75,6) and (9.25,7) .. (9.25,7.75);
+\draw [short] (7,6) -- (7,6.5);
+\draw [short] (7,6.5) -- (7.5,6.5);
+\draw [short] (7.5,6.5) -- (7.5,6);
+\draw [short] (8.75,7.75) -- (9.25,7.75);
+\draw  (7.25,11.25) circle (0.25cm);
+\draw  (7.25,5) circle (0.25cm);
+\draw  (9,8) circle (0.25cm);
+\draw  (7.25,10) circle (0.25cm);
+\draw  (10.25,8) circle (0.25cm);
+\draw  (4,7.75) circle (0.25cm);
+\draw  (5.25,8) circle (0.25cm);
+\draw  (7.25,6.25) circle (0.25cm);
+\draw [short] (7.25,11.5) -- (7.25,11);
+\draw [short] (7,11.25) -- (7.5,11.25);
+\draw [short] (7.25,5.25) -- (7.25,4.75);
+\draw [short] (7,5) -- (7.5,5);
+\node [font=\Huge] at (4,7.75) {\textbf{.}};
+\node [font=\Huge] at (4,8) {\textbf{.}};
+\node [font=\Huge] at (10.25,8.25) {\textbf{.}};
+\node [font=\Huge] at (10.25,8) {\textbf{.}};
+\draw [short] (8.75,7.75) -- (8.75,8.25);
+\draw [short] (8.75,8.25) -- (9.25,8.25);
+\draw [->, >=Stealth] (5.25,9.75) .. controls (6.75,11.25) and (8.25,10.75) .. (8.75,10) ;
+\node [font=\normalsize] at (9,10) {$\omega$};
+\node [font=\normalsize] at (7.25,9.5) {a};
+\node [font=\normalsize] at (8.5,8) {b};
+\node [font=\normalsize] at (7.25,6.75) {a'};
+\node [font=\normalsize] at (5.75,8) {b'};
+\node [font=\normalsize] at (6.5,11.5) {A};
+\node [font=\normalsize] at (7.75,5) {B};
+\node [font=\normalsize] at (10.5,8.5) {A'};
+\node [font=\normalsize] at (3.75,8.5) {B'};
+\end{circuitikz}
+}%
+
+\caption{figure (i): Cross-sectional view}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.5\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [short] (3.5,9.25) -- (3.5,7);
+\draw [short] (3.5,9.25) -- (4.75,10);
+\draw [short] (4.75,10) -- (6,9.25);
+\draw [short] (6,9.25) -- (6,7);
+\draw [short] (3.5,7) -- (4.5,6.25);
+\draw [short] (6,7) -- (5.25,6.25);
+\draw [short] (7.25,9.25) -- (7.25,7);
+\draw [short] (7.25,9.25) -- (8.5,10);
+\draw [short] (8.5,10) -- (9.75,9.25);
+\draw [short] (9.75,9.25) -- (9.75,7);
+\draw [short] (7.25,7) -- (8.25,6.25);
+\draw [short] (9.75,7) -- (9,6.25);
+\draw (4.5,6.25) to[short, -o] (4.5,5.5);
+\draw (5.25,6.25) to[short, -o] (5.25,5.5);
+\draw (8.25,6.25) to[short, -o] (8.25,5.5);
+\draw (9,6.25) to[short, -o] (9,5.5);
+\node [font=\normalsize] at (3.25,8.25) {a};
+\node [font=\normalsize] at (6.25,8.25) {a'};
+\node [font=\normalsize] at (7,8.25) {b};
+\node [font=\normalsize] at (10,8.25) {b'};
+\end{circuitikz}
+}
+\caption{figure (ii): rotor winding connection diagram}
+\end{figure}
+\begin{enumerate}
+    \item $E_{a-a'}$ and $E_{b-b'}$ have finite magnitudes and are in same phase 
+    \item $E_{a-a'}$ and $E_{b-b'}$ have finite magnitudes with $E_{b-b'}$ leading $E_{a-a'}$
+    \item $E_{a-a'}$ and $E_{b-b'}$ have finite magnitudes with $E_{a-a'}$ leading $E_{b-b'}$
+    \item $E_{a-a'}=E_{b-b'}=0$
+\end{enumerate}
+
+\bigskip
+\item The chopper circuit shown in figure (i) feeds power to a 5 A DC constant current source. The switching frequency of the chopper is 100kHz. All the components can be assumed to be ideal. The gate signals of switches $S_1$ and $S_2$ are shown in the figure (ii). Average voltage across the 5A current source is 
+\begin{figure}[H]
+\centering
+\resizebox{0.5\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw (4,9.75) to[battery1] (4,7.25);
+\draw [short] (4,9.75) -- (6,9.75);
+\draw [short] (4,7.25) -- (4,5);
+\draw [short] (4,5) -- (6,5);
+\draw (6,7.75) to[Tnpn, transistors/scale=1.19] (6,9.75);
+\draw (6,5) to[Tnpn, transistors/scale=1.19] (6,7);
+\draw [short] (6,7) -- (6,7.75);
+\draw [short] (6,7.5) -- (8.75,7.5);
+\draw (8.75,7.5) to[american current source] (8.75,5.25);
+\draw [short] (6,5) -- (8.75,5);
+\draw [short] (8.75,5) -- (8.75,5.25);
+\draw (6.75,8.25) to[D] (6.75,9.25);
+\draw (6.75,5.5) to[D] (6.75,6.5);
+\draw [short] (6,9.25) -- (6.75,9.25);
+\draw [short] (6,8.25) -- (6.75,8.25);
+\draw [short] (6,6.5) -- (6.75,6.5);
+\draw [short] (6,5.5) -- (6.75,5.5);
+\node [font=\normalsize] at (3.25,8.5) {20 V};
+\node [font=\normalsize] at (4.25,8.75) {+};
+\node [font=\normalsize] at (5.75,8.75) {$S_1$};
+\node [font=\normalsize] at (5.75,6) {$S_2$};
+\node [font=\normalsize] at (7.25,8.75) {$D_1$};
+\node [font=\normalsize] at (7.25,6) {$D_2$};
+\node [font=\normalsize] at (9.5,6.5) {5 A};
+\end{circuitikz}
+}%
+
+\caption{figure (i)}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\resizebox{0.5\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [short] (3,10.5) -- (3,6);
+\draw [short] (3,6) -- (7.75,6);
+\draw [->, >=Stealth] (7.75,6) -- (9.5,6);
+\draw [short] (3,8.25) -- (9.25,8.25);
+\draw [dashed] (4,6) -- (4,8.25);
+\draw [dashed] (6.75,6) -- (6.75,8.25);
+\draw [line width=1pt, short] (4,8.25) -- (4,9.5);
+\draw [line width=1pt, short] (3,9.5) -- (4,9.5);
+\draw [line width=1pt, short] (4,8.25) -- (6.75,8.25);
+\draw [line width=1pt, short] (6.75,8.25) -- (6.75,9.5);
+\draw [line width=1pt, short] (6.75,9.5) -- (7.5,9.5);
+\draw [line width=1pt, short] (7.5,9.5) -- (7.75,9.5);
+\draw [line width=1pt, short] (7.75,9.5) -- (7.75,8.25);
+\draw [line width=1pt, short] (7.75,8.25) -- (9.25,8.25);
+\draw [line width=1pt, short] (3,6) -- (4.5,6);
+\draw [line width=1pt, short] (4.5,6) -- (4.5,7);
+\draw [line width=1pt, short] (4.5,7) -- (4.5,7.25);
+\draw [line width=1pt, short] (4.5,7.25) -- (5.5,7.25);
+\draw [line width=1pt, short] (5.5,7.25) -- (5.5,6);
+\draw [line width=1pt, short] (5.5,6) -- (7.75,6);
+\draw [line width=1pt, short] (7.75,6) -- (8,6);
+\draw [line width=1pt, short] (8,6) -- (8,7.25);
+\draw [line width=1pt, short] (8,7.25) -- (8.75,7.25);
+\draw [line width=1pt, short] (8.75,7.25) -- (8.75,6);
+\draw [line width=1pt, short] (8.75,6) -- (9.25,6);
+\node [font=\normalsize] at (3,5.75) {0};
+\node [font=\normalsize] at (4,5.75) {3};
+\node [font=\normalsize] at (4.5,5.75) {5};
+\node [font=\normalsize] at (5.5,5.75) {8};
+\node [font=\normalsize] at (6.75,5.75) {10};
+\node [font=\normalsize] at (8.5,5.75) {time in $\mu$ s};
+\node [font=\normalsize] at (5,8.5) {Low};
+\node [font=\normalsize] at (3.5,9.75) {High};
+\node [font=\normalsize] at (2.25,9.5) {Gate};
+\node [font=\normalsize] at (2.25,7.25) {Gate};
+\node [font=\normalsize] at (2.25,9) {Signal};
+\node [font=\normalsize] at (2.25,6.75) {Signal};
+\node [font=\normalsize] at (2.25,8.5) {of $S_1$};
+\node [font=\normalsize] at (2.25,6.25) {of $S_2$};
+\end{circuitikz}
+}%
+
+\caption{figure(ii)}
+\end{figure}
+\begin{multicols}{2}
+    \begin{enumerate}
+        \item 10 V
+        \item 6 V 
+        \item 12 V
+        \item 20 V
+    \end{enumerate}
+\end{multicols}
+\bigskip
+\item In the figure, the vectors \textbf{u} and \textbf{v} are related as: $Au=v$ by a transformation matrix \textbf{A}. The correct choice of \textbf{A} is 
+\begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [line width=1.5pt, ->, >=Stealth] (4.25,5.75) -- (10.75,5.75);
+\draw [line width=1.5pt, ->, >=Stealth] (4.25,5.75) -- (9,10.25);
+\node [font=\normalsize] at (3.75,5.5) {(0,0)};
+\node [font=\normalsize] at (10.5,5.25) {(5,0)};
+\node [font=\normalsize] at (8.5,10.5) {(4,3)};
+\node [font=\normalsize] at (9.25,10.25) {u};
+\node [font=\normalsize] at (11,5.75) {v};
+\end{circuitikz}
+}%
+\end{figure}
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $\myvec{\frac{4}{5} & \frac{3}{5}\\ 
+    -\frac{3}{5}&\frac{4}{5}}$
+    \item $\myvec{\frac{4}{5} & -\frac{3}{5}\\ 
+    \frac{3}{5}&\frac{4}{5}}$
+    \item $\myvec{\frac{4}{5} & \frac{3}{5}\\ 
+    \frac{3}{5}&\frac{4}{5}}$
+    \item $\myvec{\frac{4}{5} & -\frac{3}{5}\\ 
+    \frac{3}{5}& -\frac{4}{5}}$
+\end{enumerate}
+\end{multicols}
+\bigskip
+\item One million random numbers are generated from a statistically stationary process with a Gaussian distribution with mean zero and standard deviation $\sigma_o$.\\
+The $\sigma_o$ is estimated by randomly drawing out 10,000 numbers of samples ($x_n$). The estimates $\hat{\sigma_1}$, $\hat{\sigma_2}$ are computed in the following two ways.
+\begin{align*}
+    \hat{\sigma_1}^2 &= \frac{1}{10000}\sum_{n=1}^{10000}x_n ^2\\
+    \hat{\sigma_2}^2 &= \frac{1}{9999}\sum_{n=1}^{10000}x_n ^2
+\end{align*}
+Which of the following statements is true?
+\begin{multicols}{2}
+\begin{enumerate}
+    \item $E( \hat{\sigma_2}^2 )= \hat{\sigma_o}^2 $
+    \item $E(\hat{\sigma_2})=\sigma_o$
+    \item $E( \hat{\sigma_1}^2 )= \hat{\sigma_o}^2 $
+    \item $E(\hat{\sigma_1}) = E(\hat{\sigma_2})$
+\end{enumerate}
+\end{multicols}
+\bigskip
+\item A semiconductor switch needs to block voltage V of only one polarity ($V>0$) during OFF state as shown in figure(i) and carry current in both directions during ON state as shown in figure(ii). Which of the following switch combinations will realize the same?
+\begin{figure}[H]
+\centering
+\resizebox{0.5\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [ line width=0.9pt](3,8) to[short, -o] (4.5,8) ;
+\draw [ line width=0.9pt](7.5,8) to[short, -o] (6,8) ;
+\draw [line width=0.9pt, ->, >=Stealth] (4.5,8) -- (5.5,8.75);
+\node [font=\normalsize] at (2.75,8) {P};
+\node [font=\normalsize] at (7.75,8) {Q};
+\node [font=\normalsize] at (5.25,7.75) {V};
+\node [font=\normalsize] at (4.5,7.75) {+};
+\node [font=\normalsize] at (5.75,7.75) {-};
+\end{circuitikz}
+}%
+\caption{figure(i)}
+\end{figure}
+\begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [ line width=0.9pt](3,8) to[short, -o] (4.5,8) ;
+\draw [ line width=0.9pt](7.5,8) to[short, -o] (6,8) ;
+\draw [line width=0.9pt, ->, >=Stealth] (4.5,8) -- (6,8.25);
+\node [font=\normalsize] at (2.75,8) {P};
+\node [font=\normalsize] at (7.75,8) {Q};
+\draw [line width=0.9pt, ->, >=Stealth] (4.75,7.5) -- (5.5,7.5);
+\draw [line width=0.9pt, ->, >=Stealth] (5.5,7.25) -- (4.75,7.25);
+\draw [line width=0.9pt, short] (5.75,7.25) -- (5.75,7.75);
+\draw [line width=0.9pt, short] (5.75,7.25) -- (5.75,7);
+\end{circuitikz}
+}%
+
+\caption{figure(ii)}
+\end{figure}
+\begin{enumerate}
+    \item \begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+\draw [line width=0.9pt](5.5,8.25) to[Tnpn, transistors/scale=1.19] (3,8.25);
+\draw [ line width=0.9pt](5.5,9.25) to[D] (3,9.25);
+\draw [line width=0.9pt, short] (3,8.25) -- (2.5,8.25);
+\draw [line width=0.9pt, short] (3,9.25) -- (3,8.25);
+\draw [line width=0.9pt, short] (5.25,8.25) -- (6,8.25);
+\draw [line width=0.9pt, short] (5.5,9.25) -- (5.5,8.25);
+\node [font=\large] at (2,8.25) {P};
+\node [font=\large] at (6.5,8.25) {Q};
+\end{circuitikz}
+}%
+\end{figure}
+\item \begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+\draw [line width=0.9pt](5.5,8.25) to[Tnpn, transistors/scale=1.19] (3,8.25);
+\draw [ line width=0.9pt](5.5,9.25) to[D] (3,9.25);
+\draw [line width=0.9pt, short] (3,8.25) -- (2.5,8.25);
+\draw [line width=0.9pt, short] (3,9.25) -- (3,8.25);
+\draw [line width=0.9pt, short] (5.25,8.25) -- (6,8.25);
+\draw [line width=0.9pt, short] (5.5,9.25) -- (5.5,8.25);
+\node [font=\large] at (2,8.25) {P};
+\draw [ line width=0.9pt](7.5,8.25) to[D] (6,8.25);
+\node [font=\large] at (8,8.25) {Q};
+\end{circuitikz}
+}%
+\end{figure}
+\item \begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+\draw [line width=0.9pt](5.5,8.25) to[Tnpn, transistors/scale=1.19] (3,8.25);
+\draw [ line width=0.9pt](5.5,9.25) to[D] (3,9.25);
+\draw [line width=0.9pt, short] (3,8.25) -- (2.5,8.25);
+\draw [line width=0.9pt, short] (3,9.25) -- (3,8.25);
+\draw [line width=0.9pt, short] (5.25,8.25) -- (6,8.25);
+\draw [line width=0.9pt, short] (5.5,9.25) -- (5.5,8.25);
+\node [font=\large] at (2,8.25) {P};
+\node [font=\large] at (8,8.25) {Q};
+\draw [ line width=0.9pt](6,8.25) to[D] (7.5,8.25);
+\end{circuitikz}
+}%
+\end{figure}
+\item \begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+\draw [line width=0.9pt](5.5,8.25) to[Tnpn, transistors/scale=1.19] (3,8.25);
+\draw [ line width=0.9pt](5.5,9.25) to[D] (3,9.25);
+\draw [line width=0.9pt, short] (3,8.25) -- (2.5,8.25);
+\draw [line width=0.9pt, short] (3,9.25) -- (3,8.25);
+\draw [line width=0.9pt, short] (5.25,8.25) -- (6,8.25);
+\draw [line width=0.9pt, short] (5.5,9.25) -- (5.5,8.25);
+\node [font=\large] at (2,8.25) {P};
+\node [font=\large] at (8,8.25) {Q};
+\draw [ line width=0.9pt](6,8.25) to[D] (7.5,8.25);
+\draw [line width=0.9pt, short] (7.25,8.25) -- (7.25,10);
+\draw [line width=0.9pt, short] (2.75,8.25) -- (2.75,10);
+\draw [ line width=0.9pt](7.25,10) to[D] (2.75,10);
+\end{circuitikz}
+}%
+
+\end{figure}
+\end{enumerate}
+\end{enumerate}
+\end{document}
+
