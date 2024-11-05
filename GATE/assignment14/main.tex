@@ -1,0 +1,477 @@
+%iffalse
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal,,12pt,onecolumn]{IEEEtran}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+\usepackage{gvv}
+\usepackage{circuitikz}
+\usepackage{tikz}
+%\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{float}
+\usepackage{tikz}
+\usepackage{multicol}
+\usepackage{circuitikz}
+
+
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{problem}{Problem}
+\newtheorem{proposition}{Proposition}[section]
+\newtheorem{lemma}{Lemma}[section]
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{example}{Example}[section]
+\newtheorem{definition}[problem]{Definition}
+\newcommand{\BEQA}{\begin{eqnarray}}
+\newcommand{\EEQA}{\end{eqnarray}}
+\newcommand{\define}{\stackrel{\triangle}{=}}
+\theoremstyle{remark}
+\newtheorem{rem}{Remark}
+
+% Marks the beginning of the document
+\begin{document}
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{ME - 2024}
+\author{EE24BTECH11064 - Harshil Rathan}
+\maketitle
+
+\bigskip
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+
+
+\begin{enumerate}
+    \item A horizontal beam of length $1200 mm$ is pinned at the left end and is resting on a roller at the other end as shown in the figure. A linearly varying distributed load is applied on the beam. THe magnitude is maximum bending moment acting on the beam is \underline{\hspace{1cm}} N.m. (round off to 1 decimal place)
+    \begin{figure}[H]
+\centering
+\resizebox{0.6\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw (2.5,8.75) circle (0.25cm);
+\draw (1.75,9.25) rectangle (9.5,8.25);
+\draw [short] (2.5,8.75) -- (2,7.75);
+\draw [short] (2.5,8.75) -- (3,7.75);
+\draw [short] (2,7.75) -- (3,7.75);
+\draw [short] (1.75,7.75) -- (3.25,7.75);
+\draw [short] (1.75,9.25) -- (9.5,11.25);
+\draw [->, >=Stealth] (3.75,9.75) -- (3.75,9.25);
+\draw [->, >=Stealth] (4.5,10) -- (4.5,9.25);
+\draw [->, >=Stealth] (5.25,10.25) -- (5.25,9.25);
+\draw [->, >=Stealth] (6,10.5) -- (6,9.25);
+\draw [->, >=Stealth] (6.75,10.5) -- (6.75,9.25);
+\draw [->, >=Stealth] (7.5,10.75) -- (7.5,9.25);
+\draw [->, >=Stealth] (8,10.75) -- (8,9.25);
+\draw [->, >=Stealth] (8.75,11) -- (8.75,9.25);
+\draw [->, >=Stealth] (9.5,11.25) -- (9.5,9.25)node[pos=0.5, fill=white]{100 N/m};
+\draw [short] (1.75,7.5) -- (2,7.75);
+\draw [short] (2,7.5) -- (2.25,7.75);
+\draw [short] (2.25,7.5) -- (2.5,7.75);
+\draw [short] (2.5,7.5) -- (2.75,7.75);
+\draw [short] (2.75,7.5) -- (3,7.75);
+\draw [short] (3,7.5) -- (3.25,7.75);
+\draw  (9.25,8) circle (0.25cm);
+\draw [short] (8.75,7.75) -- (9.75,7.75);
+\draw [short] (8.75,7.5) -- (9,7.75);
+\draw [short] (9,7.5) -- (9.25,7.75);
+\draw [short] (9.25,7.5) -- (9.5,7.75);
+\draw [short] (9.5,7.5) -- (9.75,7.75);
+\draw [short] (2.25,7.25) -- (2.25,6.5);
+\draw [short] (9.5,7.25) -- (9.5,6.5);
+\draw [<->, >=Stealth] (2.25,6.75) -- (9.5,6.75);
+\node [font=\normalsize] at (5.75,7.25) {1200 mm};
+\end{circuitikz}
+}%
+\end{figure}
+    \bigskip
+\item At the onstant where $OP$ is vertical and $AP$ is horizontal, the link $OD$ slides in the slot $BC$ of link $ABC$ which is hinged at A, and causes a clockwise rotattion of the link $ABC$. The magnitude of angukar velocity of link $ABC$ for this instant is \underline{\hspace{1cm}} rad/s (rounded off to 2 decimal places).
+\begin{figure}[H]
+\centering
+\resizebox{0.7\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [ fill={rgb,255:red,255; green,238; blue,46} , rounded corners = 7.8] (1.25,11.25) rectangle (2.25,5.5);
+\draw [ fill={rgb,255:red,0; green,0; blue,0} ] (1.75,9) circle (0.25cm);
+\draw [ fill={rgb,255:red,0; green,0; blue,0} , rounded corners = 3.8] (0.75,5) rectangle (2.75,4.75);
+\draw [ fill={rgb,255:red,54; green,176; blue,236} , rounded corners = 3.8] (0.75,4.75) rectangle (2.75,5);
+\draw [ rotate around={45:(2, 9.25)}] (-0.25,9.5) rectangle (4.25,9);
+\draw [ rotate around={45:(2, 9.25)}] (-0.5,9.75) rectangle (4.5,8.75);
+\draw [short] (1,5) -- (1,5.25);
+\draw [short] (2.5,5) -- (2.5,5.25);
+\draw [short] (1,5.25) .. controls (1.25,6) and (2.25,6) .. (2.5,5.25);
+
+\draw  [ fill={rgb,255:red,54; green,176; blue,236} ] (1.75,5.5) circle (0.2cm);
+\draw [fill=white] (1.75,5.5) circle (0.1cm);
+\draw [dashed] (1.75,4.25) -- (1.75,6.75);
+\draw [dashed] (0.75,5.5) -- (7,5.5);
+
+\draw [ fill={rgb,255:red,54; green,176; blue,236} ] (1.75,10.75) circle (0.2cm);
+\draw [fill=white] (1.75,10.75) circle (0.1cm);
+\draw [dashed] (0.75,8) -- (3,10.25);
+\draw [dashed] (0.25,9) -- (8,9);
+\draw [dashed] (7,5.5) -- (7,11.5);
+\draw [ fill={rgb,255:red,68; green,155; blue,193} , rounded corners = 3.8] (7.5,10) rectangle (7.75,8.25);
+\draw [short] (7.5,9.75) -- (7.25,9.75);
+\draw [short] (7.5,8.5) -- (7.25,8.5);
+\draw [short] (7,8.5) .. controls (6.5,8.75) and (6.25,9.25) .. (7,9.75);
+\draw [short] (7.25,9.75) -- (7,9.75);
+\draw [short] (7.25,8.5) -- (7,8.5);
+
+\draw [ fill={rgb,255:red,54; green,176; blue,236} ]  (7,9) circle (0.2cm);
+\draw [fill=white] (7,9) circle (0.1cm);
+\draw [short] (7,9.75) -- (4,10.75);
+\draw [short] (0.5,7.25) -- (7,8.5);
+\draw [line width=1pt, ->, >=Stealth] (2.75,6.25) .. controls (2.5,7) and (1.5,7.75) .. (0.75,6.25) ;
+\draw [dashed] (7,5.5) -- (8,5.5);
+\draw [dashed] (7,5.75) -- (7,4.25);
+\draw [<->, >=Stealth] (1.75,4.25) -- (7,4.25);
+\draw [<->, >=Stealth] (8,9) -- (8,5.5) node[pos=0.5, fill=white]{150mm};
+\draw [->, >=Stealth] (3.25,9) .. controls (3.5,9.5) and (3.25,9.75) .. (2.75,10) ;
+\node [font=\normalsize] at (7.25,10) {A};
+\node [font=\normalsize] at (0.5,6.75) {B};
+\node [font=\normalsize] at (4.25,11) {C};
+\node [font=\normalsize] at (1.75,11.5) {D};
+\node [font=\normalsize] at (4.25,4.5) {150 mm};
+\node [font=\normalsize] at (2.5,7) {$\omega$};
+\node [font=\normalsize] at (1.25,5.25) {O};
+\node [font=\normalsize] at (3.75,9.75) {$60^\circ$};
+\end{circuitikz}
+}%
+\end{figure}
+\bigskip
+\item A vibratory system consists of mass m, a vertical spring of stiffness $2k$ and a horizontal spring of stiffness k. Th end A of the horizontal spring is given a horizontal motion $x_A=a\sin{\omega t}$. The other end of the spring is connected to an inextensible rope that passes over two massless pulleys as shown. Assume $m=10kg$, $k=1.5 kN/m$, and neglect friction. The magnitude of critical driving frequency for which the oscillations of mass m tend to become excessively large is \underline{\hspace{1cm}} rad/s (answer in integer).
+\begin{figure}[H]
+\centering
+\resizebox{0.6\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [ fill={rgb,255:red,228; green,226; blue,226} ] (1.25,8.75) rectangle (8,8.25);
+\draw [ fill={rgb,255:red,227; green,227; blue,227} ] (3,9.75) rectangle (4,8.75);
+\draw [ fill={rgb,255:red,224; green,224; blue,224} ] (1.75,9.75) rectangle (4,10.25);
+\draw [ fill={rgb,255:red,173; green,173; blue,173} ] (2.25,11) rectangle (3,10.25);
+\draw [ fill={rgb,255:red,225; green,223; blue,223} ] (2,11.25) rectangle (3.5,11);
+\draw [dashed] (1.25,8.5) -- (1.5,8.75);
+\draw [dashed] (1.25,8.25) -- (1.75,8.75);
+\draw [dashed] (1.5,8.25) -- (2,8.75);
+\draw [dashed] (1.75,8.25) -- (2.25,8.75);
+\draw [dashed] (2,8.25) -- (2.5,8.75);
+\draw [dashed] (2.25,8.25) -- (2.75,8.75);
+\draw [dashed] (2.5,8.25) -- (3,8.75);
+\draw [dashed] (2.75,8.25) -- (3.25,8.75);
+\draw [dashed] (3,8.25) -- (3.5,8.75);
+\draw [dashed] (3.25,8.25) -- (3.75,8.75);
+\draw [dashed] (3.5,8.25) -- (4,8.75);
+\draw [dashed] (3.75,8.25) -- (4.25,8.75);
+\draw [dashed] (4,8.25) -- (4.5,8.75);
+\draw [dashed] (4.25,8.25) -- (4.75,8.75);
+\draw [dashed] (4.75,8.25) -- (5.25,8.75);
+\draw [dashed] (4.5,8.25) -- (5,8.75);
+\draw [dashed] (5,8.25) -- (5.5,8.75);
+\draw [dashed] (5.25,8.25) -- (5.75,8.75);
+\draw [dashed] (5.5,8.25) -- (6,8.75);
+\draw [dashed] (5.75,8.25) -- (6.25,8.75);
+\draw [dashed] (6,8.25) -- (6.5,8.75);
+\draw [dashed] (6.25,8.25) -- (6.75,8.75);
+\draw [dashed] (6.5,8.25) -- (7,8.75);
+\draw [dashed] (6.75,8.25) -- (7.25,8.75);
+\draw [dashed] (7,8.25) -- (7.5,8.75);
+\draw [dashed] (7.25,8.25) -- (7.75,8.75);
+\draw [dashed] (7.5,8.25) -- (8,8.75);
+\draw [dashed] (7.75,8.25) -- (8,8.5);
+\draw [dashed] (3,8.75) -- (4,9.75);
+\draw [dashed] (3,9) -- (3.75,9.75);
+\draw [dashed] (3,9.25) -- (3.5,9.75);
+\draw [dashed] (3,9.5) -- (3.25,9.75);
+\draw [dashed] (3.25,8.75) -- (4,9.5);
+\draw [dashed] (3.5,8.75) -- (4,9.25);
+\draw [dashed] (3.75,8.75) -- (4,9);
+\draw [dashed] (1.75,10) -- (2,10.25);
+\draw [dashed] (1.75,9.75) -- (2.25,10.25);
+\draw [dashed] (2,9.75) -- (2.5,10.25);
+\draw [dashed] (2.25,9.75) -- (2.75,10.25);
+\draw [dashed] (2.5,9.75) -- (3,10.25);
+\draw [dashed] (2.75,9.75) -- (3.25,10.25);
+\draw [dashed] (3,9.75) -- (3.5,10.25);
+\draw [dashed] (3.25,9.75) -- (3.75,10.25);
+\draw [dashed] (3.5,9.75) -- (4,10.25);
+\draw [dashed] (3.75,9.75) -- (4,10);
+\draw [dashed] (2,11) -- (2.25,11.25);
+\draw [dashed] (2.25,11) -- (2.5,11.25);
+\draw [dashed] (2.5,11) -- (2.75,11.25);
+\draw [dashed] (2.75,11) -- (3,11.25);
+\draw [dashed] (3,11) -- (3.25,11.25);
+\draw [dashed] (3.25,11) -- (3.5,11.25);
+\draw [dashed] (1.5,10) -- (1.5,12.25);
+\draw [ color={rgb,255:red,218; green,22; blue,22}, <->, >=Stealth] (1.5,11.75) -- (2.75,11.75);
+\draw [ color={rgb,255:red,88; green,130; blue,228}, short] (2.75,11.75) -- (2.75,10.75);
+\draw [ color={rgb,255:red,88; green,130; blue,228}, line width=0.8pt, short] (2.75,10.75) -- (4.5,10.75);
+\draw [ color={rgb,255:red,88; green,130; blue,228} , line width=0.8pt](4.5,10.75) to[R] (7.75,10.75);
+\draw [ color={rgb,255:red,255; green,255; blue,255} , fill={rgb,255:red,228; green,213; blue,47}, line width=0.8pt ] (7.75,10) circle (0.75cm);
+\draw [ color={rgb,255:red,88; green,130; blue,228} , fill={rgb,255:red,93; green,121; blue,234}, line width=0.8pt ] (7.55,9.75) rectangle (7.85,8.75);
+\draw [ color={rgb,255:red,88; green,130; blue,228}, line width=0.8pt, short] (7.5,8.25) -- (7.5,7);
+\draw [ color={rgb,255:red,88; green,130; blue,228}, line width=0.8pt, short] (8.5,10) -- (8.5,7);
+\draw [ color={rgb,255:red,213; green,143; blue,63} , fill={rgb,255:red,221; green,127; blue,39}, line width=0.8pt ] (8,7) circle (0.5cm);
+\node [font=\LARGE, color={rgb,255:red,88; green,130; blue,228}] at (8.25,8.75) {};
+\node [font=\LARGE, color={rgb,255:red,88; green,130; blue,228}] at (8.25,8.75) {};
+\draw [ color={rgb,255:red,88; green,130; blue,228} , fill={rgb,255:red,93; green,123; blue,213}, line width=0.8pt ] (8,7) rectangle (8.25,6.25);
+\draw [ color={rgb,255:red,88; green,228; blue,105} , fill={rgb,255:red,63; green,124; blue,54}, line width=0.8pt ] (7.5,6.25) rectangle (8.5,4.25);
+\draw [ color={rgb,255:red,88; green,130; blue,228} , line width=0.8pt](8,4.25) to[R] (8,2.75);
+\draw [ color={rgb,255:red,255; green,255; blue,255} , line width=0.8pt ] (7.25,2.75) rectangle (8.25,2.5);
+\draw [ color={rgb,255:red,255; green,255; blue,255} , line width=0.8pt ] (7.5,2.75) rectangle (8.5,2.5);
+\draw [ color={rgb,255:red,255; green,255; blue,255} , line width=0.8pt ] (7.5,2.75) rectangle (8,2.5);
+\draw [ color={rgb,255:red,91; green,132; blue,215} , line width=0.8pt ] (7,2.75) rectangle (9,2.25);
+\draw [ color={rgb,255:red,91; green,132; blue,215}, line width=0.8pt, dashed] (7,2.5) -- (7.25,2.75);
+\draw [ color={rgb,255:red,91; green,132; blue,215}, line width=0.8pt, dashed] (7,2.25) -- (7.5,2.75);
+\draw [ color={rgb,255:red,91; green,132; blue,215}, line width=0.8pt, dashed] (7.25,2.25) -- (7.75,2.75);
+\draw [ color={rgb,255:red,91; green,132; blue,215}, line width=0.8pt, dashed] (7.5,2.25) -- (8,2.75);
+\draw [ color={rgb,255:red,91; green,132; blue,215}, line width=0.8pt, dashed] (7.75,2.25) -- (8.25,2.75);
+\draw [ color={rgb,255:red,91; green,132; blue,215}, line width=0.8pt, dashed] (8,2.25) -- (8.5,2.75);
+\draw [ color={rgb,255:red,91; green,132; blue,215}, line width=0.8pt, dashed] (8.25,2.25) -- (8.75,2.75);
+\draw [ color={rgb,255:red,91; green,132; blue,215}, line width=0.8pt, dashed] (8.75,2.25) -- (9,2.5);
+\draw [ color={rgb,255:red,91; green,132; blue,215}, line width=0.8pt, dashed] (8.5,2.25) -- (9,2.75);
+\node [font=\normalsize] at (6,11.25) {k};
+\node [font=\normalsize] at (8.5,3.5) {2k};
+\node [font=\normalsize] at (8.75,5.5) {m};
+\node [font=\normalsize] at (2.5,12.25) {$x_A=a sin{\omega t}$};
+\node [font=\normalsize] at (0.75,10.5) {Neutral};
+\node [font=\normalsize] at (0.75,10) {Position};
+\node [font=\normalsize] at (2.5,10.5) {A};
+\end{circuitikz}
+}%
+\end{figure}
+\bigskip
+\item A solid massless cylindrical member of 50 mm diameter is rigidly attached at one end, and is subjected to an axial force $P=100kN$ and a torque $T=600 Nm$ at the other end as shown. Assume that the axis of the cylindrical is normal to the support. Considering distortion energy theory with allowed yield stress as 300 MPa, the factor of safety in the design is \underline{\hspace{1cm}} (round off to 1 decimal place).
+\begin{figure}[H]
+\centering
+\resizebox{0.4\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [line width=0.8pt, short] (2.25,10) -- (2.25,5.75);
+\draw [line width=0.8pt, short] (2.25,10) -- (6,12);
+\draw [line width=0.8pt, short] (6,12) -- (6,7.25);
+\draw [line width=0.8pt, short] (2.25,5.75) -- (6,7.25);
+\draw [line width=0.8pt, short] (2.25,10) -- (1.75,10.25);
+\draw [line width=0.8pt, short] (1.75,10.25) -- (1.75,6);
+\draw [line width=0.8pt, short] (1.75,6) -- (2.25,5.75);
+\draw [line width=0.8pt, short] (1.75,10.25) -- (5.5,12.25);
+\draw [line width=0.8pt, short] (5.5,12.25) -- (6,12);
+\draw [line width=0.8pt, short] (4.25,9.25) -- (10,6.5);
+\draw [line width=0.8pt, short] (3.75,8) -- (9.25,5.5);
+\draw [line width=0.8pt, short] (3.75,8) .. controls (3.25,8.5) and (3.75,9.25) .. (4.25,9.25);
+\draw [line width=0.8pt, short] (9.25,5.5) .. controls (9,6) and (9.5,6.75) .. (10,6.5);
+\draw [line width=0.8pt, short] (9.25,5.5) .. controls (10.25,5.25) and (10.75,6) .. (10,6.5);
+\draw [line width=0.8pt, dashed] (4.25,6.25) -- (4,12.5);
+\draw [line width=0.8pt, dashed] (1.25,7.5) -- (7.5,10);
+\draw [line width=0.8pt, ->, >=Stealth] (9.5,6) -- (11.5,5.25);
+\draw [line width=0.8pt, ->, >=Stealth] (8.75,6) .. controls (9.25,6.75) and (9.75,7.5) .. (10.5,6.5) ;
+\node [font=\normalsize] at (10,7.25) {T};
+\node [font=\normalsize] at (11,6) {P};
+\end{circuitikz}
+}%
+\end{figure}
+\bigskip
+\item The figure shows a thin cylindrical pressure vessel constructed by welding plates together along the line that makes an angle $\alpha=60^\circ$ with the horizontal. The closed vessel has a wall thickness of 10mm and diameter of 2m. When subjected to an internal pressure of $200 kPa$, the magnitude of the normal stress acting on the weld is \underline{\hspace{1cm}} MPa (round off to 1 decimal place).
+\begin{figure}[H]
+\centering
+\resizebox{0.6\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [line width=0.5pt, short] (3.5,9.75) -- (3.5,6.25);
+\draw [line width=0.5pt, short] (3.5,9.75) -- (10.75,9.75);
+\draw [line width=0.5pt, short] (10.75,9.75) -- (10.75,6.25);
+\draw [line width=0.5pt, short] (3.5,6.25) -- (10.75,6.25);
+\draw [line width=0.5pt, short] (10.75,9.75) .. controls (13.25,9.75) and (13.5,6.75) .. (10.75,6.25);
+\draw [line width=0.5pt, short] (3.5,6.25) .. controls (0.5,6.5) and (0.75,9.5) .. (3.5,9.75);
+\draw [line width=0.5pt, dashed] (6,7.75) -- (8.25,7.75);
+\draw [ color={rgb,255:red,209; green,41; blue,41}, line width=0.5pt, short] (4.75,9.75) .. controls (8.25,9.75) and (5.5,6.75) .. (10,6.25);
+\draw [line width=0.5pt, <->, >=Stealth] (6.25,7.75) .. controls (6,8) and (6.5,8.5) .. (6.75,8.25);
+\draw [line width=0.5pt, ->, >=Stealth] (8.5,5.5) -- (8.5,6.5);
+\node [font=\large] at (6.25,8.5) {$\alpha$};
+\node [font=\normalsize] at (8.25,5.25) {Wield line};
+\end{circuitikz}
+}%
+\end{figure}
+\bigskip
+\item A three-hinge arch $ABC$ in the form of a semi-circle is shown in the figure. The arch is in static equlibrium under vertical loads of $P=100kN$ and $Q=50kN$. Neglect friction at all the hinges. The magnitude of the horizontal reaction at B is \underline{\hspace{1cm}} kN (rounded off to 1 decimal place).
+\begin{figure}[H]
+\centering
+\resizebox{0.6\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\normalsize]
+\draw [line width=0.5pt, short] (2,3) -- (3.75,3);
+\draw [line width=0.5pt, short] (8,3) -- (9.75,3);
+\draw [line width=0.5pt, short] (2,2.75) -- (2.25,3);
+\draw [line width=0.5pt, short] (2.25,2.75) -- (2.5,3);
+\draw [line width=0.5pt, short] (2.5,2.75) -- (2.75,3);
+\draw [line width=0.5pt, short] (2.75,2.75) -- (3,3);
+\draw [line width=0.5pt, short] (3,2.75) -- (3.25,3);
+\draw [line width=0.5pt, short] (3.25,2.75) -- (3.5,3);
+\draw [line width=0.5pt, short] (3.5,2.75) -- (3.75,3);
+\draw [line width=0.5pt, short] (8,2.75) -- (8.25,3);
+\draw [line width=0.5pt, short] (8.25,2.75) -- (8.5,3);
+\draw [line width=0.5pt, short] (8.5,2.75) -- (8.75,3);
+\draw [line width=0.5pt, short] (8.75,2.75) -- (9,3);
+\draw [line width=0.5pt, short] (9,2.75) -- (9.25,3);
+\draw [line width=0.5pt, short] (9.25,2.75) -- (9.5,3);
+\draw [line width=0.5pt, short] (9.5,2.75) -- (9.75,3);
+\draw [line width=0.5pt, short] (2.25,3) -- (2.25,3.75);
+\draw [line width=0.5pt, short] (3.5,3) -- (3.5,3.75);
+\draw [line width=0.5pt, short] (8.25,3) -- (8.25,3.75);
+\draw [line width=0.5pt, short] (9.75,3) -- (9.75,3);
+\draw [line width=0.5pt, short] (2.75,3.5) .. controls (2.75,5.75) and (4,7) .. (5.5,7.25);
+\draw [line width=0.5pt, short] (2.25,3.75) .. controls (2.5,4.5) and (3.25,4.5) .. (3.5,3.75);
+
+\draw [short] (9.5,3) -- (9.5,3.75);
+\draw [line width=0.5pt, short] (8.25,3.75) .. controls (8.5,4.5) and (9.25,4.5) .. (9.5,3.75);
+\draw [ fill={rgb,255:red,0; green,0; blue,0} ] (3,3.75) circle (0.15cm);
+\draw [ fill={rgb,255:red,0; green,0; blue,0} ] (9,3.75) circle (0.15cm);
+\draw [short] (6,6.75) -- (6,2.25);
+\draw [short] (3,2.5) -- (3,2);
+\draw [short] (9,2.5) -- (9,2);
+\draw [<->, >=Stealth] (3,2.25) -- (6,2.25);
+\draw [<->, >=Stealth] (6,2.25) -- (9,2.25);
+\draw [short] (2.75,3.5) -- (3.25,3.5);
+\draw [line width=0.5pt, short] (3.25,3.5) .. controls (3,5.5) and (4.25,6.75) .. (5.75,6.75);
+\draw [short] (5.75,6.75) -- (5.75,7.25);
+\draw [short] (5.5,7.25) -- (5.75,7.25);
+\draw [ fill={rgb,255:red,0; green,0; blue,0} ] (6,7) circle (0.25cm);
+\draw [line width=0.5pt, short] (8.75,3.75) .. controls (9,5.75) and (7.5,6.75) .. (6.25,6.75);
+\draw [line width=0.5pt, short] (9.25,3.75) .. controls (9.5,6.25) and (7.5,7.25) .. (6.25,7.25);
+\draw [short] (6.25,7.25) -- (6.25,7);
+\draw [short] (6.25,7) -- (6.25,6.75);
+\draw [short] (8.75,3.75) -- (8.75,3.5);
+\draw [short] (8.75,3.5) -- (9.25,3.5);
+\draw [short] (9.25,3.5) -- (9.25,3.75);
+\draw [->, >=Stealth] (4.25,7.75) -- (4.25,7);
+\draw [->, >=Stealth] (7.5,7.75) -- (7.5,7);
+\draw [short] (7.25,7.5) -- (10.25,7.5);
+\draw [short] (9.75,3.75) -- (10.5,3.75);
+\draw [<->, >=Stealth] (10,7.5) -- (10,3.75);
+\draw [short] (4.25,9) -- (4.25,8.5);
+\draw [short] (6,9) -- (6,8.5);
+\draw [short] (7.5,9) -- (7.5,8.5);
+\draw [<->, >=Stealth] (4.25,8.75) -- (6,8.75);
+\draw [<->, >=Stealth] (6,8.75) -- (7.5,8.75);
+\node [font=\normalsize] at (5,9) {3m};
+\node [font=\normalsize] at (6.75,9) {3m};
+\node [font=\normalsize] at (10.25,6) {6m};
+\node [font=\normalsize] at (4.5,2.5) {6m};
+\node [font=\normalsize] at (7.25,2.75) {6m};
+\node [font=\Large] at (1.75,3.75) {A};
+\node [font=\Large] at (10,3.5) {C};
+\node [font=\Large] at (5.25,6.25) {B};
+\node [font=\Large] at (3.75,8.25) {P};
+\node [font=\Large] at (7.75,8.25) {Q};
+\end{circuitikz}
+}%
+\end{figure}
+\bigskip
+\item A band brake shown in the figure has a coefficient of friction of 0.3. The band can take a maximum force of $1.5kN$. The maximum braking force (F) that canbe safely applied is \underline{\hspace{1cm}} N (rounded off to the nearest integer).
+\begin{figure}[H]
+\centering
+\resizebox{0.8\textwidth}{!}{%
+\begin{circuitikz}
+\tikzstyle{every node}=[font=\large]
+\draw [ fill={rgb,255:red,191; green,191; blue,191} ] (5.25,9.5) circle (2.75cm);
+\draw [dashed] (5.25,6.25) -- (5.25,13);
+\draw [dashed] (1.75,9.25) -- (9.75,9.25);
+\draw [ fill={rgb,255:red,0; green,0; blue,0} ] (5.25,9.25) circle (0.25cm);
+\draw [short] (5.25,9.25) -- (4.75,8.5);
+\draw [short] (4.75,8.5) -- (5.75,8.5);
+\draw [short] (5.25,9.25) -- (5.75,8.5);
+\draw [short] (4.5,8.5) -- (6,8.5);
+\draw [short] (4.5,8.25) -- (4.75,8.5);
+\draw [short] (4.75,8.25) -- (5,8.5);
+\draw [short] (5,8.25) -- (5.25,8.5);
+\draw [short] (5.25,8.25) -- (5.5,8.5);
+\draw [short] (5.5,8.25) -- (5.75,8.5);
+\draw [short] (5.75,8.25) -- (6,8.5);
+\draw [->, >=Stealth] (3.25,10) .. controls (3.25,10.75) and (3.75,11.5) .. (4.5,11.5) ;
+\draw [short] (2.5,9.25) -- (2.5,4.75);
+\draw [short] (8,9.25) -- (7.75,4.75);
+\draw [ fill={rgb,255:red,84; green,174; blue,212} ] (1.75,4.75) rectangle (16.25,4.25);
+\draw [ fill={rgb,255:red,0; green,0; blue,0} ] (2.5,4.5) circle (0.10cm);
+\draw [ fill={rgb,255:red,10; green,10; blue,10} ] (7.75,4.5) circle (0.10cm);
+\draw [short] (2.5,4.5) -- (2,3.75);
+\draw [short] (2.5,4.5) -- (3,3.75);
+\draw [short] (2,3.75) -- (3,3.75);
+\draw [short] (2,3.75) -- (1.75,3.75);
+\draw [short] (3,3.75) -- (3.25,3.75);
+\draw [short] (1.75,3.5) -- (2,3.75);
+\draw [short] (2,3.5) -- (2.25,3.75);
+\draw [short] (2.25,3.5) -- (2.5,3.75);
+\draw [short] (2.5,3.5) -- (2.75,3.75);
+\draw [short] (2.75,3.5) -- (3,3.75);
+\draw [short] (3,3.5) -- (3.25,3.75);
+\draw [short] (2.5,3.25) -- (2.5,2.75);
+\draw [short] (7.75,4) -- (7.75,2.75);
+\draw [short] (16,4) -- (16,2.75);
+\draw [->, >=Stealth] (15.75,6) -- (15.75,5);
+\draw [<->, >=Stealth] (2.5,3) -- (7.75,3);
+\draw [<->, >=Stealth] (7.75,3) -- (16,3);
+\node [font=\normalsize] at (5,3.5) {200 nm};
+\node [font=\normalsize] at (11.5,3.5) {800 nm};
+\node [font=\large] at (15,5.75) {F};
+\end{circuitikz}
+}%
+\end{figure}
+\bigskip
+\item A cutting tool provides a tool life of 60 minutes while machining with the cutting speed of 60 m/min. When the same tool is used for machining the same material, it provides a tool life of 10 minutes for a cutting speed of 100 m/min. If the cutting speed is changed to 80 m/min for the same tool and work material combination, the tool life computed using Taylor's tool life model is \underline{\hspace{2cm}} minutes (rounded off to 2 decimal places).
+\bigskip
+\item Aluminum is casted in a cube-shaped mold having dimensions as 20 mm $\times$ 20 mm $\times$ 20 mm. Another mold of the same material is used to cast a sphere of aluminum having a diameter of 20 mm. The pouring temperature for both cases is the same. The ratio of the solidification times of the cube-shaped mold to the spherical mold is \underline{\hspace{2cm}} (answer in integer).
+\bigskip
+\item A blanking operation is performed on C20 steel sheet to obtain a circular disc having a diameter of 20 mm and a thickness of 2 mm. An allowance of 0.04 is provided. The punch size used for the operation is \underline{\hspace{2cm}} mm (rounded off to 2 decimal places).
+\bigskip
+\item In an arc welding process, the voltage and current are 30 V and 200 A, respectively. The cross-sectional area of the joint is 20 mm\(^2\) and the welding speed is 5 mm/s. The heat required to melt the material is 20 J/s. The percentage of heat lost to the surrounding during the welding process is \underline{\hspace{2cm}} (rounded off to 2 decimal places).
+\bigskip
+\item A flat surface of a C60 steel having dimensions of 100 mm (length) \(\times\) 200 mm (width) is produced by a HSS slab mill cutter. The 8-toothed cutter has 100 mm diameter and 200 mm width. The feed per tooth is 0.1 mm, cutting velocity is 20 m/min and depth of cut is 2 mm. The machining time required to remove the entire stock is \underline{\hspace{2cm}} minutes (rounded off to 2 decimal places).
+\bigskip
+\item In a supplier-retailer supply chain, the demand of each retailer, the capacity of each supplier, and the unit cost in rupees of material supply from each supplier to each retailer are tabulated below. The supply chain manager wishes to minimize the total cost of transportation across the supply chain.
+
+\begin{center}
+    \begin{tabular}{|c|c|c|c|c|c|}
+        \hline
+        & \textbf{Retailer I} & \textbf{Retailer II} & \textbf{Retailer III} & \textbf{Retailer IV} & \textbf{Capacity} \\
+        \hline
+        \textbf{Supplier A} & 8 & 16 & 19 & 13 & 300 \\
+        \hline
+        \textbf{Supplier B} & 5 & 10 & 7 & 8 & 300 \\
+        \hline
+        \textbf{Supplier C} & 9 & 6 & 12 & 10 & 300 \\
+        \hline
+        \textbf{Supplier D} & 8 & 15 & 11 & 9 & 300 \\
+        \hline
+        \textbf{Demand} & 300 & 300 & 300 & 300 & \\
+        \hline
+    \end{tabular}
+\end{center}
+The optional cost of satisfying the total demand from all retailers is \underline{\hspace{1cm}} rupees (answer in integer)
+\end{enumerate}
+\end{document}
+
