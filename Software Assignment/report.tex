@@ -1,0 +1,311 @@
+\let\negmedspace\undefined
+\let\negthickspace\undefined
+\documentclass[journal]{IEEEtran}
+\usepackage[a5paper, margin=10mm, onecolumn]{geometry}
+%\usepackage{lmodern} % Ensure lmodern is loaded for pdflatex
+\usepackage{tfrupee} % Include tfrupee package
+
+\setlength{\headheight}{1cm} % Set the height of the header box
+\setlength{\headsep}{0mm}     % Set the distance between the header box and the top of the text
+
+\usepackage{gvv-book}
+\usepackage{hyperref}
+\usepackage{gvv}
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts,amsthm}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{xcolor}
+\usepackage{txfonts}
+\usepackage{listings}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{gensymb}
+\usepackage{comment}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{tkz-euclide} 
+\usepackage{listings}
+% \usepackage{gvv}                                        
+\def\inputGnumericTable{}                                 
+\usepackage[latin1]{inputenc}                                
+\usepackage{color}                                            
+\usepackage{array}                                            
+\usepackage{longtable}                                       
+\usepackage{calc}                                             
+\usepackage{multirow}                                         
+\usepackage{hhline}                                           
+\usepackage{ifthen}                                           
+\usepackage{lscape}
+\usepackage{circuitikz}
+\usepackage{titlesec}
+\tikzstyle{block} = [rectangle, draw, fill=blue!20, 
+    text width=4em, text centered, rounded corners, minimum height=3em]
+\tikzstyle{sum} = [draw, fill=blue!10, circle, minimum size=1cm, node distance=1.5cm]
+\tikzstyle{input} = [coordinate]
+\tikzstyle{output} = [coordinate]
+\titleformat{\section}[hang]{\normalfont\bfseries}{\thesection}{1em}{}
+
+
+
+\begin{document}
+
+\bibliographystyle{IEEEtran}
+\vspace{3cm}
+
+\title{Software Assignment: Eigenvalue Calculation}
+\author{EE24BTECH11064 - Harshil Rathan}
+ \maketitle
+% \newpage
+% \bigskip
+\tableofcontents
+\newpage
+{\let\newpage\relax\maketitle}
+
+\renewcommand{\thefigure}{\theenumi}
+\renewcommand{\thetable}{\theenumi}
+\setlength{\intextsep}{10pt} % Space between text and floats
+
+
+\numberwithin{equation}{enumi}
+\numberwithin{figure}{enumi}
+\renewcommand{\thetable}{\theenumi}
+\section{\textbf{Eigenvalue}}
+\subsection{Definition}
+\begin{itemize}
+    \item Eigenvalues are a special set of scalars associated with a linear system of equations (i.e., a matrix equation) that are sometimes also known as characteristic roots.
+    \item  Let $\vec{A}$ be a linear transformation represented by a matrix $\vec{A}$. If there is a vector $\vec{X} \in \mathbb{R}^n$ with $\vec{X} \neq 0$ such that 
+\end{itemize}
+\begin{align*}
+     \vec{A} \vec{X} = \lambda \vec{X}
+\end{align*}
+\begin{itemize}
+    \item   for some scalar $\lambda$, then $\lambda$ is called the eigenvalue of $\vec{A}$ with corresponding (right) eigenvector $\vec{X}$.
+    \item  Letting $\vec{A}$ be a $k \times k$ square matrix:
+\end{itemize}
+\begin{align*}
+    \begin{bmatrix}
+      a_{11} & a_{12} & \cdots & a_{1k} \\
+      a_{21} & a_{22} & \cdots & a_{2k} \\
+      \vdots & \vdots & \ddots & \vdots \\
+      a_{k1} & a_{k2} & \cdots & a_{kk}
+  \end{bmatrix}
+  \begin{bmatrix}
+      x_1 \\ x_2 \\ \vdots \\ x_k
+  \end{bmatrix}
+  = \lambda
+  \begin{bmatrix}
+      x_1 \\ x_2 \\ \vdots \\ x_k
+  \end{bmatrix}
+\end{align*}
+\begin{itemize}
+    \item This can be written as:
+\end{itemize}
+\begin{align*}
+     (\vec{A} - \lambda I)\vec{X} = 0
+\end{align*}
+\begin{itemize}
+    \item where \( I \) is the identity matrix.
+    \item As shown in Cramer's rule, a linear system of equations has nontrivial solutions if and only if the determinant vanishes. Therefore, the solutions are given by:
+\end{itemize}
+\begin{align*}
+     \det(\vec{A} - \lambda I) = 0
+\end{align*}
+\section{\textbf{Eigenvalue finding algorithms}}
+\begin{enumerate}
+    \item [1.] QR Algorithm
+    \item [2.] Power Iteration Method 
+    \item [3.] Jacobi Method  
+\end{enumerate}
+\subsection{\textbf{QR Algorithm}}
+The QR algorithm uses \textbf{QR decomposition} iteratively to transform a matrix into a form where its eigenvalues become evident\\
+\subsubsection{Matrix Decomposition}
+Given a square matrix $\vec{A}$, the matrix $\vec{A}$ can be decomposed like: $\vec{A}=\vec{Q}\vec{R}$, where 
+\begin{itemize}
+    \item $\vec{Q}$ is an orthogonal matrix 
+    \item $\vec{R}$ is an upper triangular matrix
+\end{itemize}
+\begin{align*}
+    \vec{Q}^T \vec{Q}= \vec{Q} \vec{Q}^T = 1
+\end{align*}
+\begin{itemize}
+    \item This decomposition can be done using methods like Gram-Schmidt $etc$.\\
+\end{itemize}
+\subsubsection{Iterative Process}
+We construct a new matrix $\vec{A_1}$, by reversing the order of $\vec{Q}$ and $\vec{R}$
+\begin{align*}
+    \vec{A_1}=\vec{R}\vec{Q}
+\end{align*}
+\begin{itemize}
+    \item The new matrix $\vec{A_1}$ has the same eigenvalues as the matrix $\vec{A}$. We now repeat this process 
+    \item Take $\vec{A_1}$ and decompose it again to 
+\end{itemize}
+\begin{align*}
+    \vec{A_1}=\vec{Q_1}\vec{R_1}
+\end{align*}
+\begin{itemize}
+    \item Compute $\vec{A_2}$ by reversing $\vec{Q_1}$ and $\vec{R_1}$
+\end{itemize}
+\begin{align*}
+    \vec{A_2}=\vec{R_1}\vec{Q_1}
+\end{align*}
+\begin{itemize}
+    \item Repeating this k times gives us 
+\end{itemize}
+\begin{align*}
+    \vec{A_k}=\vec{Q_k}\vec{R_k} \text{,   } \vec{A_{k+1}}=\vec{R_k}\vec{Q_k}
+\end{align*}
+\subsubsection{Convergence}
+\begin{itemize}
+    \item The diagonal elements of $\vec{A_k}$ approach the eigenvalues of the original matrix $\vec{A}$ as $k\rightarrow \infty$
+    \item The matrix $\vec{A_k}$ will converge to an upper triangular matrix with the eigenvalues on the diagonal, where k is the iteration count in the QR algorithm 
+    \item The iteration process is repeated till $\vec{A_k}$ becomes an upper triangular matrix \\
+\end{itemize}
+\subsubsection{PROs}
+\begin{itemize}
+    \item It can compute all eigenvalues of a matrix simultaneously
+    \item It can be adapted to matrices having real, complex entries 
+    \item Efficient for dense and symmetric matrices, converges rapidly for symmetric matrices\\
+\end{itemize}
+\subsubsection{CONs}
+\begin{itemize}
+    \item Computation cost for Large matrices, for a $n \times n$ matrix each iteration has a time complexity of $O(n^3)$. (Time Complexity)
+    \item It requires storing multiple matrices which can consume high memory, which makes it less practical for very large matrices.
+    \item Limited efficiency for Sparse Matrices, suitable for dense and symmetric matrices only 
+\end{itemize}
+\subsection{\textbf{Power-Iteration Method}}
+This Method is simple and is used to find the dominant eigenvalue (The eigenvalue with the largest absolute value) of a given matrix $\vec{A}$. The given matrix $\vec{A}$ has to be a square matrix.\\
+\subsubsection{Initialization}
+\begin{itemize}
+    \item Given a square matrix $\vec{A}$ and a random vector $\vec{x_{0}}$. Choose $\vec{x_0}$ as the starting point. This vector will be iteratively transformed to approximate the eigenvector associated with the dominant eigenvalue of $\vec{A}$.
+    \item The initial vector $\vec{x_0}$ can be randomly chosen but it should have atleast some component in the direction of the dominant eigenvector.
+    \item Check for Orthogonality at each iteration.\\ 
+\end{itemize}
+\subsubsection{Iterate}
+\begin{itemize}
+    \item This process iterates repeatedly by multiplying the matrix $\vec{A}$ by the vector $\vec{x_k}$, where $\vec{x_k}$ is the vector at each step k.  For k = 1,2,3 $\cdots$
+\end{itemize}
+\begin{itemize}
+    \item compute the next vector $\vec{x_{k+1}}$ = $\vec{A}\vec{x_k}$
+    \item Normalize $\vec{x_{k+1}}$ by dividing by it's norm 
+\end{itemize}
+\begin{align*} 
+\vec{x}_{k+1} = \frac{\vec{A} \vec{x}_k}{|\vec{A} \vec{x}_k|} 
+\end{align*}
+\begin{itemize}
+    \item This multiplication and normalization process is repeated until $\vec{x_k}$ converges \\
+\end{itemize}
+\subsubsection{Convergence}
+\begin{itemize}
+    \item The vector $\vec{x_k}$ converges to the eigenvector associated with the dominant eigenvalue, as $k\rightarrow \infty$ 
+    \item The eigenvalue $\lambda$ can be approximated as 
+\end{itemize}
+\begin{align*} 
+\lambda_k = \frac{\vec{x}_k^T \vec{A} \vec{x}_k}{\vec{x}_k^T \vec{x}_k} \end{align*}
+\begin{itemize}
+    \item If the matrix has a dominant eigenvalue, the convergence is usually fast, but if the difference between the magnitude of the eigenvalues is less the convergence is slow \\
+\end{itemize}
+\subsubsection{PROs}
+ \begin{itemize} 
+ \item Simple to implement and computationally inexpensive, making it efficient for large matrices when only the dominant eigenvalue is needed. \item Suitable for sparse matrices, as it requires only matrix-vector multiplication. 
+ \item Works well when the matrix has a unique dominant eigenvalue.\\ \end{itemize}
+\subsubsection{CONs}
+ \begin{itemize} 
+ \item Only finds the dominant eigenvalue, additional techniques are required to find other eigenvalues. 
+ \item May converge slowly or not at all if the dominant eigenvalue is not significantly larger than other eigenvalues.
+ \item Limited to matrices with a clear dominant eigenvalue
+ \item Does not work for matrices with complex values 
+ \end{itemize}
+\subsection{\textbf{Jacobi Method}}
+This method is an iterative process designed for computing the eigenvalues and eigenvectors of real symmetric matrices. It transforms the diagonal elements of the matrix to be it's eigenvalues. It is based on a series of rotations called Jacobi or given rotations.\\
+\subsubsection{Initial Transformations}
+\begin{itemize}
+    \item It applies a series of Jacobi rotations (orthogonal transformations) to the zero out off-diagonal elements iteratively 
+    \item A rotation matrix $\vec{J}\brak{p,q,\theta}$ is constructed for each iteration, targeting the off-diagonal element $\vec{A_{pq}}$
+    \item The new matrix $\vec{A'}$ minimizes the off-diagonal entries as to $\vec{A}$\\
+\end{itemize}
+\subsubsection{Constraints}
+\begin{itemize}
+    \item As we want to make the off element of the new matrix $\vec{A'}$ zero. We write the condition 
+\end{itemize}
+\begin{align*}
+    0=(c^2-s^2)\vec{a_{pq}}+c s(\vec{a_{pp}-\vec{a_{qq}}})
+\end{align*}
+\begin{itemize}
+    \item As $c=\cos\theta$ and $s=\sin\theta$, if $\vec{a_{pq}}\neq 0$ we get 
+\end{itemize}
+\begin{align*}
+    \phi = \cot2\theta = \frac{(a_{qq}-a_{pp})}{2a_{pq}}
+\end{align*}
+\begin{itemize}
+    \item Say $\tan\theta=t$, then
+\end{itemize}
+\begin{align*}
+    t=\tan\theta= \phi \pm \sqrt{\phi^2+1}
+\end{align*}
+\begin{itemize}
+    \item c and s are computed as 
+\end{itemize}
+\begin{align*}
+    c=\frac{1}{\sqrt{1+t^2}}, \text{ } s=t\cdot c 
+\end{align*}\\
+\subsubsection{Iterative Process}
+\begin{itemize}
+    \item Identify the largest off-diagonal element $\vec{a_{pq}}$
+    \item Perform operations using $\vec{J}(p,q,\theta)$ and transform $\vec{A'}=\vec{J^T}\vec{A}\vec{J}$
+    \item Update the new matrix $\vec{A'}$ to $\vec{A}$ and repeat the process until the off-diagonal elements are smaller than the tolerance $\epsilon$ \\
+\end{itemize}
+\subsubsection{Convergence}
+\begin{itemize}
+    \item Convergence is guaranteed for symmetric matrices due to its reliance on symmetric transformations 
+    \item It iteratively reduces the magnitude of the off-diagonal elements, leading to diagonalization
+    \item Convergence can be fast for matrices when the eigenvalues are well-separated, for matrices with close eigenvalues it requires more iterations
+    \item The algorithm stops when the largest off-diagonal element is smaller than the pre-defined tolerance $\epsilon$\\
+\end{itemize}
+\subsubsection{PROs}
+\begin{itemize}
+    \item The algorithm can be easily implemented since it does not require complex matrix factorization like the QR
+    \item It also yield the eigenvectors of the given matrix. The columns of the transformed matrix are its eigenvectors and the diagonal elements are its eigenvalues \\
+\end{itemize}
+\subsubsection{CONs}
+\begin{itemize}
+    \item High cost of computation, the overall complexity is $O(n^3)$, making it inefficient for large matrices 
+    \item Is efficient only for real symmetric matrices 
+    \item For matrices with close eigenvalues, convergence may be slow and require more iterations 
+\end{itemize}
+\subsection{\textbf{Comparision}}
+\begin{table}[h!]
+\centering
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{|>{\raggedright\arraybackslash}p{3cm}|>{\raggedright\arraybackslash}p{4cm}|>{\raggedright\arraybackslash}p{4cm}|>{\raggedright\arraybackslash}p{4cm}|}
+\hline
+\textbf{Criteria} & \textbf{QR Algorithm} & \textbf{Power Iteration Method}& \textbf{Jacobi Method} \\ \hline
+\textbf{Purpose}& Computes all eigenvalues and eigenvectors. & Computes the dominant eigenvalue. & Computes all eigenvalues of symmetric matrices. \\ \hline
+\textbf{Matrix Suitability} & Dense Matrices and Symmetric Matrices & Large, Sparse matrices. & Symmetric matrices. \\ \hline
+\textbf{Complexity (Per Iteration)} & \( O(n^3) \) for dense matrices, \( O(kn^2) \) for sparse matrices (k = iterations). & \( O(n^2) \) for large sparse matrices (scales well with size). & \( O(n^3) \), with slower convergence compared to QR. \\ \hline
+\textbf{Convergence}      & Quadratic convergence for symmetric matrices slower for general matrices. & Linear convergence requires well-separated eigenvalues. & Quadratic convergence for symmetric matrices. \\ \hline
+\textbf{Efficiency}  & Efficient for small to medium-sized matrices costly for very large matrices. & Highly efficient for sparse, large matrices focusing on a single eigenvalue. & Inefficient for large matrices due to iterative pairwise rotations. \\ \hline
+\textbf{Key Features}     & - Computes all eigenvalues at once. \newline - Suitable for iterative refinements (shifted QR). & - Simplest method. \newline - Focuses on the largest eigenvalue. \newline - Memory-efficient. & - Simple to implement for symmetric matrices. \newline - Explicitly diagonalizes the matrix. \\ \hline
+\end{tabular}%
+}
+\end{table}
+\subsection{Chosen Algorithm}
+\textbf{QR Algorithm}
+\begin{itemize}
+    \item QR algorithm is more efficient as it generates all the eigenvalues at once 
+    \item Power Iteration Algorithm only computes the largest eigenvalue hence is not suitable
+    \item Jacobi method is more efficient for symmetric matrices and also has a slower convergence as compared to QR
+    \item QR also computes eigenvalues for matrices with complex entries and fatser convergence for small-medium size matrices   
+\end{itemize}
+\newpage
+\section{References}
+\begin{itemize}
+    \item \href{https://en.wikipedia.org/wiki/Eigenvalues_and_eigenvectors}{Eigenvalue}\\
+    \item \href{https://www.andreinc.net/2021/01/25/computing-eigenvalues-and-eigenvectors-using-qr-decomposition}{QR Algorithm}\\
+    \item \href{https://en.wikipedia.org/wiki/Power_iteration}{Power Iteration}\\
+    \item \href{https://en.wikipedia.org/wiki/Arnoldi_iteration}{Jacobi Method} \\ 
+    \item \href{https://github.com/vbartle/VMLS-Companions.git}{VMLS - Python Companion}\\
+    \item \href{https://web.stanford.edu/~boyd/vmls/vmls.pdf}{VMLS.pdf}\\
+    \item \href{https://www.youtube.com/watch?v=d32WV1rKoVk}{Householder Algorithm}
+\end{itemize}
+\end{document}
